@@ -1,5 +1,43 @@
 // Created 2014 by Zack Sheppard
 
 body {
-  background-color: #ff0000;
+  h1 {
+    font-family: 'museo500', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  .site-wrapper {
+    background-image: url(/img/sunset.jpg);
+    background-position: center center;
+    background-size: cover;
+  }
+      
+  .inner.cover {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+  }
+  
+  .lead {
+    line-height: 1.6;
+  }
+      
+  p {
+    &.email {
+      font-size: 1.25em;
+    }
+    
+    margin-bottom: 30px;
+  
+    a {
+      border-bottom: 1px dotted white;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      
+      &:hover {
+        border-bottom: 1px solid white;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
 }
