@@ -1,6 +1,6 @@
 {
   "name": "zacks-hompeage",
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "A simple static server for a simple homepage",
   "main": "server.js",
   "scripts": {
