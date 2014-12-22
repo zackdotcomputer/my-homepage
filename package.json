@@ -1,0 +1,27 @@
+{
+  "name": "zacks-hompeage",
+  "version": "0.1",
+  "description": "A simple static server for a simple homepage",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "connect": "~3.3.x",
+    "serve-static": "~1.7.x"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zackzachariah/my-homepage"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "homepage",
+    "server"
+  ],
+  "license": "MIT"
+}
