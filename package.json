@@ -7,6 +7,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "less": "~2.1.x",
     "connect": "~3.3.x",
     "serve-static": "~1.7.x"
   },
