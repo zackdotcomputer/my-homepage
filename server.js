@@ -1,14 +1,20 @@
-// Very simple server just echoes out static files:
+/**
+ * Zack's Amazingly Compact and Komplete Server (ZACKS) *
+ * Created by Zack Sheppard (zacksheppard.com) on 12/22/2014.
+ * Echoes out the contents of /static/ blindly. As an added bonus,
+ * it will compile the contents of /static/less/*.less to /static/css/
+ * when you start it up.
+ */
 
 var connect = require('connect');
 var serveStatic = require('serve-static');
 
-// Get the port from Heroku, or use 8080 for development
-var port = (process.env.PORT || 8080);
+// Get the port from Heroku, or use 5000 for development
+var port = (process.env.PORT || 5000);
 
 var staticDir = __dirname + '/static';
 
-// Process the LESS files
+/** BEGIN LESS processing */
 console.log("Processing LESS files...");
 
 var fs = require('fs');
@@ -20,6 +26,7 @@ fs.mkdirSync(staticDir + '/css');
 for (var i = 0; i < lessFiles.length; i++) {
   var path = lessFiles[i];
 
+  // /static/less/foo.less -> /static/css/foo.less.css
   var inputPath = staticDir + '/less/' + path;
   var outputPath = staticDir + '/css/' + path + '.css';
 
@@ -47,6 +54,7 @@ for (var i = 0; i < lessFiles.length; i++) {
 }
 
 console.log("LESS warmup COMPLETE");
+/** END LESS processing */
 
 // Set up the server
 console.log("Starting server...");
