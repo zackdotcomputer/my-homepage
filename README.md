@@ -1,4 +1,4 @@
-Zack's Amazingly Compact and Komplete Server (ZACKS)
+Zack's Homepage Server
 ===========
 
 This repo holds the code that runs [my homepage](http://zacksheppard.com).
