@@ -21,7 +21,11 @@ var fs = require('fs');
 var less = require('less');
 
 var lessFiles = fs.readdirSync(staticDir + '/less');
-fs.mkdirSync(staticDir + '/css');
+try {
+  fs.mkdirSync(staticDir + '/css', 0o755);
+} catch(e) {
+  if ( e.code != 'EEXIST' ) throw e;
+}
 
 for (var i = 0; i < lessFiles.length; i++) {
   var path = lessFiles[i];
