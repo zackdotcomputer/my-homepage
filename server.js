@@ -22,7 +22,7 @@ var less = require('less');
 
 var lessFiles = fs.readdirSync(staticDir + '/less');
 try {
-  fs.mkdirSync(staticDir + '/css', 0o755);
+  fs.mkdirSync(staticDir + '/css');
 } catch(e) {
   if ( e.code != 'EEXIST' ) throw e;
 }
