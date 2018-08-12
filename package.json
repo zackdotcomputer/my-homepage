@@ -1,6 +1,6 @@
 {
   "name": "zacks-hompeage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple static server for a simple homepage",
   "main": "server.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "serve-static": "^1.13.2"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "10.8.x"
   },
   "repository": {
     "type": "git",

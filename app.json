@@ -2,6 +2,7 @@
   "name": "Zack's Simple Homepage",
   "description": "A barebones Node.js server for a simple homepage",
   "repository": "https://github.com/zackzachariah/my-homepage",
+  "stack": "heroku-16",
   "keywords": [
     "node",
     "heroku",
