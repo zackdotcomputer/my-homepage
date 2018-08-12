@@ -1,6 +1,9 @@
 # Processed css
 static/css
 
+# Mac spotlight indexing
+.DS_Store
+
 # Logs
 logs
 *.log
