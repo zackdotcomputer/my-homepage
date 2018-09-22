@@ -1,18 +1,12 @@
 {
   "name": "zacks-hompeage",
-  "version": "0.1.1",
-  "description": "A simple static server for a simple homepage",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
+  "version": "0.2.0",
+  "description": "A simple homepage for a Zack",
+  "private": true,
   "dependencies": {
-    "connect": "^3.6.6",
-    "less": "^3.8.1",
-    "serve-static": "^1.13.2"
-  },
-  "engines": {
-    "node": "10.8.x"
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "1.1.5"
   },
   "repository": {
     "type": "git",
@@ -20,9 +14,14 @@
   },
   "keywords": [
     "node",
-    "heroku",
     "homepage",
-    "server"
+    "react"
   ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
   "license": "MIT"
 }

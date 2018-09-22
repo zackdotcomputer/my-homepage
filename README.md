@@ -3,12 +3,9 @@ Zack's Homepage Server
 
 This repo holds the code that runs [my homepage](http://zacksheppard.com).
 
-I wanted to be able to host a simple server for free on [Heroku](http://heroku.com),
-so I wrote an itty-bitty Node.js server.
+Originally, this included a lightweight node server, but nowadays you can just host things for free on Firebase, so that's what I do.
 
-I got the basics of the server from [this Stack Overflow question](http://stackoverflow.com/questions/6084360/using-node-js-as-a-simple-web-server).
-I then added a startup loop that will compile all the LESS files in `static/less` so I didn't
-have to worry about moving CSS files around.
+I have included the boilerplate for a React app, in case I want to add more complicated features later. Right now, there's only a tiny bit of React used for dynamic features.
 
 The site's design is modified from [@mdo](https://twitter.com/mdo)'s Cover template
 for [Bootstrap](http://getbootstrap.com).
