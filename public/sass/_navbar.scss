@@ -1,0 +1,81 @@
+// CSS Styles for zacksheppard.com
+// Created by Zack Sheppard - 2018
+// License and full source code at https://github.com/zackzachariah/my-homepage
+// Inspired and helped by the Resume template at https://github.com/BlackrockDigital/startbootstrap-resume
+
+#navbar {
+  a {
+    border-bottom: none;
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+      border-bottom: none;
+    }
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    font-weight: 800;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+  }
+  .navbar-toggler {
+    &:focus {
+      outline-color: lighten($theme-primary, 15%);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #navbar {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-bottom: 7rem;
+
+    display: flex;
+    flex-direction: column;
+
+    width: $sidebar-width;
+    height: 100vh;
+
+    .navbar-brand {
+      display: flex;
+
+      margin: auto auto 0;
+      padding: 0.5rem;
+
+      .img-profile {
+        border-color: rgba($color: #fff, $alpha: 0.2);
+      }
+    }
+
+    .navbar-collapse {
+      display: flex;
+      align-items: flex-start;
+      flex-grow: 0;
+
+      width: 100%;
+      margin-bottom: auto;
+
+      .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+
+        .nav-item {
+          display: block;
+          .nav-link {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #navbar {
+    width: $sidebar-full-width;
+  }
+}

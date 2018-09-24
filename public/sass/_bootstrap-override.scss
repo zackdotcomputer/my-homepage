@@ -1,0 +1,28 @@
+// CSS Styles for zacksheppard.com
+// Created by Zack Sheppard - 2018
+// License and full source code at https://github.com/zackzachariah/my-homepage
+// Inspired and helped by the Resume template at https://github.com/BlackrockDigital/startbootstrap-resume
+
+.bg-primary {
+  background-color: $theme-primary !important;
+}
+
+.text-primary {
+  color: $theme-primary !important;
+}
+
+.text-secondary {
+  color: $theme-secondary !important;
+}
+
+a {
+  color: $theme-primary;
+  border-bottom: 1px dotted $theme-primary;
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    border-bottom: 1px solid darken($theme-primary, 15%);
+    color: darken($theme-primary, 15%);
+  }
+}

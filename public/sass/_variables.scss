@@ -1,0 +1,30 @@
+// CSS Styles for zacksheppard.com
+// Created by Zack Sheppard - 2018
+// License and full source code at https://github.com/zackzachariah/my-homepage
+// Inspired and helped by the Resume template at https://github.com/BlackrockDigital/startbootstrap-resume
+
+// Colors - scheme and names by coolors.co
+$prussian-blue: #0b3954 !default;
+$persian-red: #c84630 !default;
+$smoky-black: #0a090c !default;
+$cornsilk: #fff4e0 !default;
+$outer-space: #3e505B !default;
+
+$theme-primary: $prussian-blue !default;
+$theme-secondary: $persian-red !default;
+$text-color: $smoky-black !default;
+
+// Page Variables
+$sidebar-width: 15rem;
+$sidebar-full-width: 20rem;
+
+$profile-size-small: 11rem;
+$profile-size-large: 13rem;
+
+// Mixin functions
+@mixin body-font {
+  font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+@mixin heading-font {
+  font-family: 'museo500', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
