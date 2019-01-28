@@ -1,0 +1,94 @@
+// Created 1/2019 by Zack Sheppard (zacksheppard.com)
+
+$navbar-tall-height: 220px;
+$navbar-pinned-height: 80px;
+
+#hero {
+  height: 100vh;
+  width: 100vw;
+
+  margin-bottom: -1 * $navbar-tall-height;
+
+  .hero-background {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+
+    background-image: url("/static/img/zack-art.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    z-index: -1;
+  }
+}
+
+#main-nav {
+  @extend .container-fluid;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+
+  height: $navbar-tall-height;
+  background: rgba($color: $white, $alpha: 0.8);
+  padding-top: 8px;
+
+  @include transition($transition-base);
+
+  .nav-left {
+    h1,
+    h4 {
+      line-height: 1;
+    }
+  }
+
+  .nav-right {
+    display: flex;
+    flex-direction: row;
+
+    > h4 {
+      padding-left: 20px;
+      padding-right: 20px;
+      border-right: 1px solid $black;
+
+      &:last-child {
+        padding-right: 0;
+        border-right: none;
+      }
+    }
+  }
+
+  &.hero-mode {
+    .fixed-only {
+      display: none;
+    }
+  }
+
+  &.scrolled {
+    position: fixed;
+    top: 0;
+
+    height: $navbar-pinned-height;
+
+    .nav-left {
+      h1,
+      h4 {
+        display: inline-block;
+        font-size: 1.5rem;
+      }
+    }
+
+    .hero-only {
+      display: none;
+    }
+
+    br {
+      display: none;
+    }
+  }
+}

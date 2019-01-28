@@ -1,1 +1,43 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
+
+@font-face {
+  font-family: "Museo";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/static/webfonts/389018_0_0.eot");
+  src: url("/static/webfonts/389018_0_0.eot?#iefix") format("embedded-opentype"),
+    url("/static/webfonts/389018_0_0.woff2") format("woff2"),
+    url("/static/webfonts/389018_0_0.woff") format("woff"),
+    url("/static/webfonts/389018_0_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Museo";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/static/webfonts/389018_1_0.eot");
+  src: url("/static/webfonts/389018_1_0.eot?#iefix") format("embedded-opentype"),
+    url("/static/webfonts/389018_1_0.woff2") format("woff2"),
+    url("/static/webfonts/389018_1_0.woff") format("woff"),
+    url("/static/webfonts/389018_1_0.ttf") format("truetype");
+}
+
+$font-family-headers: "Museo";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-headers;
+}
+
+h1 {
+  font-weight: bold;
+  color: $red;
+
+  span {
+    color: $black;
+  }
+}
