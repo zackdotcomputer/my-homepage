@@ -1,5 +1,5 @@
-# Processed css
-static/css
+# NextJS
+.next
 
 # Mac spotlight indexing
 .DS_Store
