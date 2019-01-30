@@ -2,8 +2,14 @@
 
 import React from "react";
 import HeadTags from "./HeadTags";
+import smoothscroll from "smoothscroll-polyfill";
 
 export class Page extends React.PureComponent {
+  componentDidMount() {
+    // kick off the polyfill!
+    smoothscroll.polyfill();
+  }
+
   render() {
     const title = "Zack Sheppard - New York iOS and Web Programmer";
     const description =

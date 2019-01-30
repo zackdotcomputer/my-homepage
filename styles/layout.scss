@@ -1,0 +1,88 @@
+// Created 1/2019 by Zack Sheppard (zacksheppard.com)
+
+.page-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: $black;
+
+  #hero {
+    position: fixed;
+    height: 100vh;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    z-index: $zindex-fixed;
+
+    @include media-breakpoint-down(md) {
+      height: 40vh;
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: unset;
+    }
+
+    @include media-breakpoint-down(xs) {
+      position: relative;
+    }
+  }
+
+  #content {
+    background-color: $black;
+    color: $white;
+    padding: 0;
+    width: 50%;
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      margin-top: 40vh;
+    }
+
+    @include media-breakpoint-up(lg) {
+      min-height: 100vh;
+    }
+
+    @include media-breakpoint-down(xs) {
+      margin-top: 0;
+    }
+
+    .cta-arrow {
+      width: 34px;
+      height: 12px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .back-to-top {
+      cursor: default;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      padding: 1rem 0;
+      width: 50%;
+      z-index: $zindex-sticky;
+
+      background: linear-gradient(to bottom, $black, rgba(0, 0, 0, 0));
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+
+      @include media-breakpoint-down(xs) {
+        position: fixed;
+      }
+
+      // When not scrolled, hide this
+      opacity: 0;
+
+      @include transition(opacity 1s linear);
+    }
+
+    &.scrolled .back-to-top {
+      cursor: pointer;
+      opacity: 0.75;
+    }
+  }
+}

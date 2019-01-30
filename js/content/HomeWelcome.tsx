@@ -14,7 +14,7 @@ const HomeWelcome = () => (
   <div className="home-welcome">
     <h2>Hi! I&rsquo;m</h2>
     <h1>Zack Sheppard</h1>
-    <div className="big">
+    <div className="big bio">
       <p>
         <strong>
           I&rsquo;m an engineer with over 10 years experience making server,
@@ -31,18 +31,23 @@ const HomeWelcome = () => (
     </div>
     <div id="social">
       <a className="fa-link" href="mailto:contact@zacksheppard.com">
+        <span className="sr-only">Email Zack</span>
         <FontAwesomeIcon icon={faEnvelopeOpenText} />
       </a>
-      <a className="fa-link" href="#">
+      <a className="fa-link" href="https://www.linkedin.com/in/zacksheppard/">
+        <span className="sr-only">Zack's Linked In</span>
         <FontAwesomeIcon icon={faLinkedinIn} />
       </a>
-      <a className="fa-link" href="#">
+      <a className="fa-link" href="https://www.github.com/zackzachariah">
+        <span className="sr-only">Zack's Github</span>
         <FontAwesomeIcon icon={faGithub} />
       </a>
-      <a className="fa-link" href="#">
+      <a className="fa-link" href="https://www.twitter.com/zackzachariah">
+        <span className="sr-only">Zack's Twitter</span>
         <FontAwesomeIcon icon={faTwitter} />
       </a>
-      <a className="fa-link" href="#">
+      <a className="fa-link" href="https://www.instagram.com/zackzachariah">
+        <span className="sr-only">Zack's Instagram</span>
         <FontAwesomeIcon icon={faInstagram} />
       </a>
     </div>

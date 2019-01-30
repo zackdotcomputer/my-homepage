@@ -1,0 +1,66 @@
+// Created 1/2019 by Zack Sheppard (zacksheppard.com)
+
+#hero {
+  background-image: url("/static/img/zack-suited.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home-welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px;
+
+  h1 {
+    font-size: 6vw;
+  }
+
+  .bio {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    h1 {
+      font-size: 4rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 3rem;
+
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    min-height: 100vh;
+  }
+
+  @media (min-width: 1500px) {
+    h1 {
+      font-size: 6.5rem;
+    }
+  }
+}
+
+.fa-link {
+  font-size: 2rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  display: inline-block;
+  background: $white;
+  border-radius: 1.75rem;
+  text-align: center;
+  line-height: 3.35rem;
+  margin-right: 1rem;
+  &:last-child {
+    margin-right: 0;
+  }
+}

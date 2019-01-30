@@ -8,10 +8,10 @@ import HomeWelcome from "../js/content/HomeWelcome";
 
 const Index = () => (
   <Page>
+    <ImagePane />
     <ContentPane>
       <HomeWelcome />
     </ContentPane>
-    <ImagePane />
   </Page>
 );
 
