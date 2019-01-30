@@ -1,5 +1,7 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
 @font-face {
   font-family: "Museo";
   font-weight: bold;
@@ -34,10 +36,15 @@ h6 {
 }
 
 h1 {
+  font-size: $h1-font-size;
   font-weight: bold;
   color: $red;
 
   span {
     color: $black;
   }
+}
+
+.big {
+  font-size: 1.5em;
 }

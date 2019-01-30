@@ -2,13 +2,16 @@
 
 import "../styles/master.scss";
 import Page from "../js/layout/Page";
-import Hero from "../js/sections/Hero";
-import Navbar from "../js/sections/Navbar";
+import ImagePane from "../js/sections/ImagePane";
+import ContentPane from "../js/sections/ContentPane";
+import HomeWelcome from "../js/content/HomeWelcome";
 
 const Index = () => (
   <Page>
-    <Hero />
-    <Navbar />
+    <ContentPane>
+      <HomeWelcome />
+    </ContentPane>
+    <ImagePane />
   </Page>
 );
 

@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export default class Hero extends React.PureComponent {
+export default class HeroImage extends React.PureComponent {
   render() {
     return (
       <div id="hero">
