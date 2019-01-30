@@ -50,17 +50,21 @@
   }
 }
 
-.fa-link {
-  font-size: 2rem;
-  height: 3.5rem;
-  width: 3.5rem;
-  display: inline-block;
-  background: $white;
-  border-radius: 1.75rem;
-  text-align: center;
-  line-height: 3.35rem;
-  margin-right: 1rem;
-  &:last-child {
-    margin-right: 0;
+#social {
+  display: flex;
+  direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .fa-link {
+    font-size: 2rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    display: inline-block;
+    background: $white;
+    border-radius: 1.75rem;
+    text-align: center;
+    line-height: 3.35rem;
+    margin-right: 1rem;
   }
 }
