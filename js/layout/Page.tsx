@@ -50,6 +50,8 @@ export class Page extends React.PureComponent {
         <HeadTags
           siteTitle={title}
           description={description}
+          faviconUrl="/static/icons/favicon-32x32.png"
+          manifestUrl="/static/icons/manifest.json"
           // TODO: More meta tags
         />
 

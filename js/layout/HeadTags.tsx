@@ -23,6 +23,7 @@ export interface Props {
   faviconUrl?: string;
   imageUrlForTwitter?: string;
   imageUrlForFacebook?: string;
+  manifestUrl?: string;
 
   // A rel-canonical URL to link back to
   canonicalUrl?: string;
@@ -141,6 +142,10 @@ export default class HeadTags extends React.PureComponent<Props> {
       results.push(
         <link rel="icon" type="image/png" href={this.props.faviconUrl} />
       );
+    }
+
+    if (this.props.manifestUrl) {
+      results.push(<link rel="manifest" href={this.props.manifestUrl} />);
     }
 
     if (this.props.description) {
