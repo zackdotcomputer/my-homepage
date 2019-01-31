@@ -9,7 +9,7 @@ interface State {
 
 export default class ContentPane extends React.PureComponent<
   {
-    children: React.ReactChild;
+    children: React.ReactChild | React.ReactChild[];
   },
   State
 > {

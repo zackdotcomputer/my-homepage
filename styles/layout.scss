@@ -48,6 +48,23 @@
       margin-top: 0;
     }
 
+    .content-pane > section {
+      padding: 100px;
+
+      @include media-breakpoint-down(md) {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        padding: 3rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+        min-height: 100vh;
+      }
+    }
+
     .cta-arrow {
       width: 34px;
       height: 12px;
@@ -58,20 +75,21 @@
     .back-to-top {
       cursor: default;
       text-align: center;
-      position: absolute;
+      position: fixed;
       top: 0;
       padding: 1rem 0;
       width: 50%;
       z-index: $zindex-sticky;
 
-      background: linear-gradient(to bottom, $black, rgba(0, 0, 0, 0));
+      background: linear-gradient(
+        to bottom,
+        $black,
+        rgba($black, 0.8) 70%,
+        rgba($black, 0) 100%
+      );
 
       @include media-breakpoint-down(md) {
         width: 100%;
-      }
-
-      @include media-breakpoint-down(xs) {
-        position: fixed;
       }
 
       // When not scrolled, hide this
@@ -82,7 +100,7 @@
 
     &.scrolled .back-to-top {
       cursor: pointer;
-      opacity: 0.75;
+      opacity: 0.9;
     }
   }
 }

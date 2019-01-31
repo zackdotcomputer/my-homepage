@@ -1,0 +1,17 @@
+// Created 1/2019 by Zack Sheppard (zacksheppard.com)
+
+#resume {
+  .resume-item {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: row;
+
+    .resume-date {
+      min-width: 12rem;
+      text-align: right;
+      color: $red;
+      opacity: 0.8;
+    }
+  }
+}

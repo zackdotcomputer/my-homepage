@@ -11,9 +11,11 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const HomeWelcome = () => (
-  <div className="home-welcome">
-    <h2>Hi! I&rsquo;m</h2>
-    <h1>Zack Sheppard</h1>
+  <section id="welcome" className="home-welcome">
+    <h3>Hi! I&rsquo;m</h3>
+    <h1>
+      <strong>Zack Sheppard</strong>
+    </h1>
     <div className="big bio">
       <p>
         <strong>
@@ -55,7 +57,7 @@ const HomeWelcome = () => (
         </a>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default HomeWelcome;
