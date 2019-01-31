@@ -43,6 +43,9 @@
 
     .content-pane > section {
       padding: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
       @include media-breakpoint-down(md) {
         padding-top: 4rem;
@@ -88,7 +91,7 @@
       // When not scrolled, hide this
       opacity: 0;
 
-      @include transition(opacity 1s linear);
+      @include transition(opacity 0.5s linear);
     }
 
     &.scrolled .back-to-top {

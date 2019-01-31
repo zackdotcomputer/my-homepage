@@ -3,11 +3,39 @@
 import React from "react";
 import HeadTags from "./HeadTags";
 import smoothscroll from "smoothscroll-polyfill";
+import jQuery from "jquery";
 
 export class Page extends React.PureComponent {
   componentDidMount() {
     // kick off the polyfill!
     smoothscroll.polyfill();
+
+    // Smooth scrolling targets using jQuery
+    // Inspired by https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/js/resume.js
+    jQuery('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+      const link: HTMLAnchorElement = this as HTMLAnchorElement;
+      if (
+        location.pathname.replace(/^\//, "") ==
+          link.pathname.replace(/^\//, "") &&
+        location.hostname == link.hostname
+      ) {
+        let target = jQuery(link.hash);
+        target = target.length
+          ? target
+          : jQuery("[name=" + link.hash.slice(1) + "]");
+
+        if (target) {
+          const offset = target.offset();
+          if (offset) {
+            window.scrollTo({
+              top: offset.top,
+              behavior: "smooth"
+            });
+            return false;
+          }
+        }
+      }
+    });
   }
 
   render() {

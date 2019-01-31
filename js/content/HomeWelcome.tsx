@@ -19,8 +19,15 @@ const HomeWelcome = () => (
     <div className="big bio">
       <p>
         <strong>
-          I&rsquo;m an engineer with over 10 years experience making server,
-          web, and iOS products. These days I'm a freelancer and consultant.
+          I&rsquo;m an engineer with over{" "}
+          <a className="js-scroll-trigger" href="#resume">
+            10 years experience
+          </a>{" "}
+          making server, web, and iOS products. These days I'm a{" "}
+          <a className="js-scroll-trigger" href="#present">
+            freelancer and consultant
+          </a>
+          .
         </strong>
       </p>
 

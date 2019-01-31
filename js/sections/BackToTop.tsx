@@ -2,27 +2,17 @@
 
 import React from "react";
 
-export default class BackToTop extends React.PureComponent {
-  _handleClick() {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth"
-    });
-  }
+const BackToTop = () => (
+  <div className="back-to-top">
+    <a className="js-scroll-trigger" href="#welcome">
+      <img
+        className="cta-arrow"
+        src="/static/img/arrow-up.png"
+        alt="arrow pointing up"
+      />
+      (Back to top)
+    </a>
+  </div>
+);
 
-  render() {
-    return (
-      <div className="back-to-top">
-        <a onClick={this._handleClick}>
-          <img
-            className="cta-arrow"
-            src="/static/img/arrow-up.png"
-            alt="arrow pointing up"
-          />
-          (Back to top)
-        </a>
-      </div>
-    );
-  }
-}
+export default BackToTop;
