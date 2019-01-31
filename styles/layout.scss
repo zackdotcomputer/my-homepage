@@ -16,16 +16,13 @@
     z-index: $zindex-fixed;
 
     @include media-breakpoint-down(md) {
+      position: relative;
       height: 40vh;
       width: 100%;
       top: 0;
       left: 0;
       right: 0;
       bottom: unset;
-    }
-
-    @include media-breakpoint-down(xs) {
-      position: relative;
     }
   }
 
@@ -37,15 +34,11 @@
 
     @include media-breakpoint-down(md) {
       width: 100%;
-      margin-top: 40vh;
+      margin-top: 0;
     }
 
     @include media-breakpoint-up(lg) {
       min-height: 100vh;
-    }
-
-    @include media-breakpoint-down(xs) {
-      margin-top: 0;
     }
 
     .content-pane > section {

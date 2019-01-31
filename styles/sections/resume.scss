@@ -5,13 +5,32 @@
     margin-top: 4rem;
     margin-bottom: 3rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
+
+    // For md or xl+, put the date over to the right
+    @include media-breakpoint-up(xl) {
+      flex-direction: row;
+    }
+
+    @include media-breakpoint-only(md) {
+      flex-direction: row;
+    }
 
     .resume-date {
-      min-width: 12rem;
-      text-align: right;
+      text-align: left;
       color: $red;
       opacity: 0.8;
+
+      // For md or xl+, put the date over to the right
+      @include media-breakpoint-up(xl) {
+        min-width: 12rem;
+        text-align: right;
+      }
+
+      @include media-breakpoint-only(md) {
+        min-width: 12rem;
+        text-align: right;
+      }
     }
   }
 }
