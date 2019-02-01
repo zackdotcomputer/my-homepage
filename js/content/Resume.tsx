@@ -5,7 +5,10 @@ import React from "react";
 const ResumeSection = () => (
   <section id="resume">
     <section className="associated-image">
-      <img src="/static/img/zack-bartender.jpg" alt="Zack as a bartender" />
+      <img
+        src="/static/img/zack-foursquare.jpg"
+        alt="Zack in a Foursquare shirt"
+      />
     </section>
     <div className="content-pane">
       <h2>
@@ -23,11 +26,8 @@ const ResumeSection = () => (
           <h3>Freelance Work</h3>
           <p>
             Since September 2018, I've been available for work as a freelance
-            engineer, manager, consultant, and mentor. See{" "}
-            <a className="js-scroll-trigger" href="#present">
-              below
-            </a>{" "}
-            if you'd like to hire me. Some of my featured clients include:
+            engineer, manager, consultant, and mentor. Some of my featured
+            clients include:
           </p>
           <h5>Candid&trade;</h5>
           <p>
