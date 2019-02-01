@@ -8,7 +8,7 @@
   #hero {
     position: fixed;
     height: 100vh;
-    width: 50%;
+    width: 50vw;
     top: 0;
     bottom: 0;
     right: 0;
@@ -34,48 +34,57 @@
     background-color: $black;
     color: $white;
     padding: 0;
-
-    @include media-breakpoint-up(lg) {
-      min-height: 100vh;
-    }
+    min-height: 100vh;
 
     section {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+
+      @include media-breakpoint-down(md) {
+        flex-direction: column-reverse;
+      }
+
       .associated-image {
         display: none;
 
         @supports (position: sticky) and (object-fit: cover) {
+          order: 2;
+          flex-grow: 1;
           display: block;
-          width: 50vw;
 
           position: sticky;
           top: 0px;
           z-index: $zindex-sticky - 1;
-          float: right;
 
           img {
-            height: 100vh;
-            width: 50vw;
+            height: 100%;
+            width: 100%;
             object-fit: cover;
+          }
+
+          @include media-breakpoint-up(lg) {
+            height: 100vh;
           }
 
           @include media-breakpoint-down(md) {
             position: relative;
             width: 100vw;
-
-            img {
-              width: 100vw;
-              height: 40vh;
-            }
+            height: 40vh;
+            flex-grow: 0;
           }
         }
       }
 
       & > .content-pane {
-        width: 50%;
+        order: 1;
+        width: 50vw;
+        flex-shrink: 0;
 
         @include media-breakpoint-down(md) {
           width: 100%;
           margin-top: 0;
+          flex-grow: 1;
         }
 
         padding: 60px 100px 100px;
@@ -94,10 +103,6 @@
 
         @include media-breakpoint-down(xs) {
           padding-top: 1rem;
-        }
-
-        @include media-breakpoint-up(lg) {
-          min-height: 100vh;
         }
       }
 
@@ -119,7 +124,7 @@
       position: fixed;
       top: 0;
       padding: 1rem 0;
-      width: 50%;
+      width: 50vw;
       z-index: $zindex-sticky;
 
       background: linear-gradient(

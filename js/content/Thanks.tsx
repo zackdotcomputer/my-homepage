@@ -4,9 +4,9 @@ import React from "react";
 
 const Thanks = () => (
   <section id="present">
-    <section className="associated-image">
+    <div className="associated-image">
       <img src="/static/img/zack-forest.jpg" alt="Zack, in the forest" />
-    </section>
+    </div>
     <div className="content-pane">
       <h2>
         <strong>Thanks</strong>!

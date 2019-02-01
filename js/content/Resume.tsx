@@ -4,12 +4,12 @@ import React from "react";
 
 const ResumeSection = () => (
   <section id="resume">
-    <section className="associated-image">
+    <div className="associated-image">
       <img
         src="/static/img/zack-foursquare.jpg"
         alt="Zack in a Foursquare shirt"
       />
-    </section>
+    </div>
     <div className="content-pane">
       <h2>
         <strong>Past</strong> Work and Projects

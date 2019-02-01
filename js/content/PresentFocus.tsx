@@ -17,9 +17,9 @@ import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
 const PresentFocus = () => (
   <section id="present">
-    <section className="associated-image">
+    <div className="associated-image">
       <img src="/static/img/zack-museum.jpg" alt="Zack, thinking in a museum" />
-    </section>
+    </div>
     <div className="content-pane">
       <h2>
         My <strong>Present</strong> Focus

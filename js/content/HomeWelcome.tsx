@@ -12,9 +12,9 @@ import {
 
 const HomeWelcome = () => (
   <section id="welcome" className="home-welcome">
-    <section className="associated-image">
+    <div className="associated-image">
       <img src="/static/img/zack-suited.jpg" alt="A photo of Zack" />
-    </section>
+    </div>
     <div className="content-pane">
       <h3>Hi! I&rsquo;m</h3>
       <h1>
