@@ -1,14 +1,13 @@
-Zack's Homepage
-===========
+# Zack's Homepage
 
 This repo holds the code that runs [my homepage](https://zacksheppard.com).
 
-Originally, this included a lightweight node server, but nowadays you can just host things for free on [Firebase](https://firebase.com), so that's what I do.
+This is the third generation of my homepage. It used to be a lightweight Node server serving raw HTML
+on Heroku, then I ported it to [React](https://reactjs.org/) and [Bootstrap](http://getbootstrap.com) 4
+on Firebase. This year I fell in love with [Next.js](http://nextjs.org/) and
+[Netlify](https://www.netlify.com/), and I wanted to move to using an original design rather than just
+a Bootstrap template, so I rewrote it again. That's this version.
 
-I have included the boilerplate for a React app, in case I want to add more complicated features later. Right now, there's only a tiny bit of Javascript used for dynamic features.
-
-The site's design is modified from @BlackrockDigital's [Resume template](https://github.com/blackrockDigital/startbootstrap-resume/)
-for [Bootstrap](http://getbootstrap.com).
-
-This is mostly here so you can see my code, not so you can clone it. If you are going to clone it,
-change the data so you're not me anymore and aren't sending me your Google Analytics data.
+This is mostly here so you can see my code, not so you can clone it. It is open source, though, so feel
+free to take it and use it as reference or inspiration. Just, like, if you are going to clone it, change
+it so you're not me anymore.
