@@ -24,40 +24,85 @@
       right: 0;
       bottom: unset;
     }
+
+    @supports (position: sticky) and (object-fit: cover) {
+      display: none;
+    }
   }
 
   #content {
     background-color: $black;
     color: $white;
     padding: 0;
-    width: 50%;
-
-    @include media-breakpoint-down(md) {
-      width: 100%;
-      margin-top: 0;
-    }
 
     @include media-breakpoint-up(lg) {
       min-height: 100vh;
     }
 
-    .content-pane > section {
-      padding: 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    section {
+      .associated-image {
+        display: none;
 
-      @include media-breakpoint-down(md) {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+        @supports (position: sticky) and (object-fit: cover) {
+          display: block;
+          width: 50vw;
+
+          position: sticky;
+          top: 0px;
+          z-index: $zindex-sticky - 1;
+          float: right;
+
+          img {
+            height: 100vh;
+            width: 50vw;
+            object-fit: cover;
+          }
+
+          @include media-breakpoint-down(md) {
+            position: relative;
+            width: 100vw;
+
+            img {
+              width: 100vw;
+              height: 40vh;
+            }
+          }
+        }
       }
 
-      @include media-breakpoint-down(sm) {
-        padding: 3rem;
+      & > .content-pane {
+        width: 50%;
+
+        @include media-breakpoint-down(md) {
+          width: 100%;
+          margin-top: 0;
+        }
+
+        padding: 50px 100px 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include media-breakpoint-down(md) {
+          padding-top: 4rem;
+          padding-bottom: 4rem;
+        }
+
+        @include media-breakpoint-down(sm) {
+          padding: 3rem;
+        }
+
+        @include media-breakpoint-down(xs) {
+          padding-top: 1rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+          min-height: 100vh;
+        }
       }
 
-      @include media-breakpoint-up(lg) {
-        min-height: 100vh;
+      &:last-child > .content-pane {
+        padding-bottom: 50px;
       }
     }
 

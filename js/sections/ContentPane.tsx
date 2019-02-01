@@ -50,7 +50,7 @@ export default class ContentPane extends React.PureComponent<
         className={this.state.significantlyScrolled ? "scrolled" : ""}
       >
         <BackToTop />
-        <div className="content-pane">{this.props.children}</div>
+        {this.props.children}
       </div>
     );
   }
