@@ -34,7 +34,6 @@
     background-color: $black;
     color: $white;
     padding: 0;
-    min-height: 100vh;
 
     section {
       display: flex;
@@ -77,36 +76,45 @@
       }
 
       & > .content-pane {
+        display: flex;
+        flex-direction: column;
         order: 1;
         width: 50vw;
         flex-shrink: 0;
 
         @include media-breakpoint-down(md) {
           width: 100%;
-          margin-top: 0;
           flex-grow: 1;
         }
 
-        padding: 60px 100px 100px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        article {
+          padding: 60px 100px 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
 
-        @include media-breakpoint-down(md) {
-          padding-top: 4rem;
-          padding-bottom: 4rem;
-        }
+          @include media-breakpoint-up(lg) {
+            min-height: 100vh;
+          }
 
-        @include media-breakpoint-down(sm) {
-          padding: 3rem;
-        }
+          @include media-breakpoint-down(md) {
+            margin-top: 0;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            flex-grow: 1;
+          }
 
-        @include media-breakpoint-down(xs) {
-          padding-top: 1rem;
+          @include media-breakpoint-down(sm) {
+            padding: 3rem;
+          }
+
+          @include media-breakpoint-down(xs) {
+            padding-top: 1rem;
+          }
         }
       }
 
-      &:last-child > .content-pane {
+      &:last-child > .content-pane article:last-child {
         padding-bottom: 60px;
       }
     }

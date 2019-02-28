@@ -8,15 +8,39 @@ import HomeWelcome from "../js/content/HomeWelcome";
 import ResumeSection from "../js/content/Resume";
 import PresentFocus from "../js/content/PresentFocus";
 import Thanks from "../js/content/Thanks";
+import SplitSection from "../js/layout/SplitSection";
 
 const Index = () => (
   <Page>
     <ImagePane />
     <ContentPane>
-      <HomeWelcome />
-      <PresentFocus />
-      <ResumeSection />
-      <Thanks />
+      <SplitSection
+        id="welcome"
+        className="home-welcome"
+        image={<img src="/static/img/zack-suited.jpg" alt="A photo of Zack" />}
+      >
+        <HomeWelcome />
+      </SplitSection>
+      <SplitSection
+        id="about-me"
+        image={
+          <img
+            src="/static/img/zack-museum.jpg"
+            alt="Zack, thinking in a museum"
+          />
+        }
+      >
+        <PresentFocus />
+        <ResumeSection />
+      </SplitSection>
+      <SplitSection
+        id="thanks"
+        image={
+          <img src="/static/img/zack-forest.jpg" alt="Zack, in the forest" />
+        }
+      >
+        <Thanks />
+      </SplitSection>
     </ContentPane>
   </Page>
 );
