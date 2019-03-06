@@ -1,9 +1,14 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
 import React from "react";
+import Router from "next/router";
 import HeadTags from "./HeadTags";
 import smoothscroll from "smoothscroll-polyfill";
 import jQuery from "jquery";
+
+import * as gtag from "../util/gtag";
+
+Router.events.on("routeChangeComplete", (url: string) => gtag.pageview(url));
 
 export class Page extends React.PureComponent {
   componentDidMount() {

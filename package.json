@@ -35,8 +35,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "export": "next build && next export",
-    "deploy": "aws s3 sync out s3://zack-homepage/"
+    "export": "next build && next export"
   },
   "license": "MIT",
   "browserslist": [
