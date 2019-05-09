@@ -33,16 +33,33 @@ const ResumeSection = () => (
           their mobile app's UX as well as their internal processes for CI,
           testing, and release.
         </p>
-        <h5>Trialspark</h5>
+        <h5>Trialspark &amp; Fi Marketing Sites</h5>
         <p>
-          I built the new marketing site for{" "}
+          I was separately contracted by both{" "}
           <a href="https://www.trialspark.com/" target="_blank">
             Trialspark
-          </a>
-          . Given the specific requirements this company had, I worked with
-          their team to build a custom tool that enabled us to build a site
-          using React and SASS but, in the end, ship a fast and responsible
-          HTML5 site with no dependencies to any frameworks.
+          </a>{" "}
+          and{" "}
+          <a href="https://tryfi.com/" target="_blank">
+            Fi
+          </a>{" "}
+          to construct their new marketing homepages. Given the specific
+          requirements these companies had, I worked with their teams to quickly
+          build out sites based on modern tools like React and SASS while
+          incorporating older wisdom for quick and efficient websites such as
+          using static-file hosting in lieu of a dynamic server when possible.
+        </p>
+        <h5>Deer Meets Beer (for Foursquare and Jägermeister)</h5>
+        <p>
+          I was contracted by Foursquare and Jägermeister to complete the
+          construction of their{" "}
+          <a href="https://www.jagermeister.com/en-US/deer-and-beer">
+            Deer Meets Beer
+          </a>{" "}
+          experience. Working remotely with stakeholders from design, product,
+          and business departments, I helped shape the requirements of the
+          project and was ultimately and solely responsible for constructing the
+          front and back end of the website that was ultimately launched.
         </p>
       </div>
       <div className="resume-date">
