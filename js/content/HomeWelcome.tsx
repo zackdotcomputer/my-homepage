@@ -48,17 +48,17 @@ const HomeWelcome = () => (
           <span className="sr-only">Zack's Linked In</span>
           <FontAwesomeIcon icon={faLinkedinIn} />
         </a>
-        <a className="fa-link" href="https://www.github.com/zackzachariah">
+        <a className="fa-link" href="https://www.github.com/genuinezack">
           <span className="sr-only">Zack's Github</span>
           <FontAwesomeIcon icon={faGithub} />
         </a>
       </div>
       <div>
-        <a className="fa-link" href="https://www.twitter.com/zackzachariah">
+        <a className="fa-link" href="https://www.twitter.com/genuinezack">
           <span className="sr-only">Zack's Twitter</span>
           <FontAwesomeIcon icon={faTwitter} />
         </a>
-        <a className="fa-link" href="https://www.instagram.com/zackzachariah">
+        <a className="fa-link" href="https://www.instagram.com/genuinezack">
           <span className="sr-only">Zack's Instagram</span>
           <FontAwesomeIcon icon={faInstagram} />
         </a>

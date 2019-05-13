@@ -10,7 +10,7 @@ const Thanks = () => (
     <p>Thanks for stopping by!</p>
     <p>
       By the way, if you're curious about how I made this site, you can{" "}
-      <a href="https://www.github.com/zackzachariah/my-homepage">
+      <a href="https://www.github.com/genuinezack/my-homepage">
         view the source on Github
       </a>
       . If all you're after is what stack I used, I built it in{" "}
