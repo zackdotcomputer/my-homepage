@@ -1,6 +1,6 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
 @font-face {
   font-family: "Museo";
@@ -51,11 +51,16 @@ h3 {
 }
 
 .big {
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 h1.big {
   font-size: 5rem;
+}
+
+p {
+  word-spacing: 0.1em;
+  line-height: 1.7;
 }
 
 a {
