@@ -68,7 +68,6 @@
 
           @include media-breakpoint-down(md) {
             position: relative;
-            width: 100vw;
             height: 40vh;
             flex-grow: 0;
           }

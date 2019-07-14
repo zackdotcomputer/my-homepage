@@ -27,11 +27,7 @@
 $font-family-headers: "Museo";
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
   font-family: $font-family-headers;
 }
 
@@ -44,12 +40,22 @@ h2 {
   }
 }
 
+h3,
+h4 {
+  font-weight: bold;
+}
+
+h2,
 h3 {
   margin-top: 2.5rem;
 }
 
 .big {
   font-size: 1.3em;
+}
+
+h1.big {
+  font-size: 5rem;
 }
 
 a {

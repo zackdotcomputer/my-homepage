@@ -17,31 +17,27 @@ import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
 const PresentFocus = () => (
   <Fragment>
-    <h2 id="present">
+    <h1 id="present">
       My <strong>Present</strong> Focus
-    </h2>
+    </h1>
     <div>
       <p>
-        I'm currently available as a freelancer on an hourly or project basis.
-        So, if you have need for someone with my experience,{" "}
-        <a href="mailto:contact@zacksheppard.com">send me an email</a>! Let's
-        talk about how I can help, whether you need a manager to help develop
-        your team and company culture, or an engineer to build your apps and
-        website, or even bartender to help you pick the right bottle of scotch
-        or champagne.
+        I&rsquo;m a full-time freelance senior engineer, helping teams realize
+        their potential and complete their projects. If you have need for
+        someone with my experience,{" "}
+        <a href="mailto:outreach@zacksheppard.com">send me an email</a>.
       </p>
       <p>
-        I am there to help build things and help your team celebrate, enjoy, and
-        take pride in their achievements.
+        Additionally, I'm working on building tool and code to improve the
+        open-source community and the closed-source developer experience.
       </p>
     </div>
-    <h3>Programming Languages &amp; Tools</h3>
+    <h2>Programming Languages &amp; Tools</h2>
     <p>
-      I know Swift, Objective-C, HTML, CSS, and Javascript. I have experience
-      building front-ends for web and mobile in both true native code and
-      React/React Native. I have experience integrating front-ends with all
-      common server backends (except Ruby, sorry), as well as experience
-      deploying code with Docker, Firebase, and AWS.
+      I am a full-stack engineer with a focus on front-end web and iOS work. I
+      am an expert in Swift, Objective-C, HTML, CSS/SASS, and Javascript. I also
+      have extensive experience with most common server backend languages and
+      frameworks (except Ruby, sorry).
     </p>
     <div className="dev-icons">
       <div>
