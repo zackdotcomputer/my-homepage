@@ -3,9 +3,10 @@
 @import "./variables";
 
 // Import Bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap-reboot";
-@import "../node_modules/bootstrap/scss/bootstrap-grid";
-@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Import FontAwesome
+@import "../node_modules/@fortawesome/fontawesome-svg-core/styles.css";
 
 @import "./fonts";
 
