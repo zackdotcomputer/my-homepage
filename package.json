@@ -1,7 +1,7 @@
 {
   "name": "zacks-homepage",
   "author": "Zack Sheppard (zacksheppard.com)",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A simple homepage for a Zack",
   "private": true,
   "dependencies": {
