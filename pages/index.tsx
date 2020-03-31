@@ -1,6 +1,5 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
-import "../styles/master.scss";
 import Page from "../js/layout/Page";
 import ImagePane from "../js/components/ImagePane";
 import ContentPane from "../js/components/ContentPane";

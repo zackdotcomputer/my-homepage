@@ -19,9 +19,15 @@ const HomeWelcome = () => (
     </h1>
     <div className="big bio">
       <p>
-        I&rsquo;m a <Link href="/work">freelance engineer</Link> with over{" "}
-        <Link href="/work#resume">10 years experience</Link> making server, web,
-        and iOS products.
+        I&rsquo;m a{" "}
+        <Link href="/work">
+          <a>freelance engineer</a>
+        </Link>{" "}
+        with over{" "}
+        <Link href="/work#resume">
+          <a>10 years experience</a>
+        </Link>{" "}
+        making server, web, and iOS products.
       </p>
 
       <p>
