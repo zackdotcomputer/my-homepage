@@ -1,7 +1,7 @@
 {
   "name": "zacks-homepage",
   "author": "Zack Sheppard (zacksheppard.com)",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A simple homepage for a Zack",
   "private": true,
   "dependencies": {
@@ -20,7 +20,6 @@
     "@types/node": "^12.6.2",
     "@types/react": "^16.8.17",
     "@types/smoothscroll-polyfill": "^0.3.1",
-    "@zeit/next-sass": "^1.0.1",
     "next": "^9.0.1",
     "node-sass": "^4.12.0",
     "typescript": "^3.4.5"
