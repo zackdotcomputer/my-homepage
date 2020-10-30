@@ -3,7 +3,7 @@
 import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
 
-import { GA_TRACKING_ID } from "../js/util/gtag";
+import { GA_TRACKING_ID } from "../src/util/gtag";
 
 /**
  * Override the base Document class so that we can insert the Google Analytics
@@ -34,7 +34,7 @@ export default class extends Document {
         gtag('js', new Date());
 
         gtag('config', '${GA_TRACKING_ID}');
-      `
+      `,
             }}
           />
         </Head>

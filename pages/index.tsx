@@ -1,10 +1,10 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
-import Page from "../js/layout/Page";
-import ImagePane from "../js/components/ImagePane";
-import ContentPane from "../js/components/ContentPane";
-import HomeWelcome from "../js/content/HomeWelcome";
-import SplitSection from "../js/layout/SplitSection";
+import Page from "../src/layout/Page";
+import ImagePane from "../src/components/ImagePane";
+import ContentPane from "../src/components/ContentPane";
+import HomeWelcome from "../src/content/HomeWelcome";
+import SplitSection from "../src/layout/SplitSection";
 
 const Index = () => (
   <Page>

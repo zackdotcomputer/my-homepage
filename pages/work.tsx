@@ -1,11 +1,11 @@
 // Created 7/2019 by Zack Sheppard (zacksheppard.com)
 
-import Page from "../js/layout/Page";
-import ImagePane from "../js/components/ImagePane";
-import ContentPane from "../js/components/ContentPane";
-import ResumeSection from "../js/content/Resume";
-import PresentFocus from "../js/content/PresentFocus";
-import SplitSection from "../js/layout/SplitSection";
+import Page from "../src/layout/Page";
+import ImagePane from "../src/components/ImagePane";
+import ContentPane from "../src/components/ContentPane";
+import ResumeSection from "../src/content/Resume";
+import PresentFocus from "../src/content/PresentFocus";
+import SplitSection from "../src/layout/SplitSection";
 
 const Work = () => (
   <Page>
