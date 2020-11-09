@@ -1,9 +1,31 @@
 {
   "name": "zacks-homepage",
-  "author": "Zack Sheppard (zacksheppard.com)",
-  "version": "0.4.2",
-  "description": "A simple homepage for a Zack",
+  "version": "0.4.3",
   "private": true,
+  "description": "A simple homepage for a Zack",
+  "keywords": [
+    "node",
+    "homepage",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/genuinezack/my-homepage"
+  },
+  "license": "MIT",
+  "author": "Zack Sheppard (zacksheppard.com)",
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "export": "next build && next export",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
@@ -11,6 +33,7 @@
     "@fortawesome/react-fontawesome": "^0.1.12",
     "bootstrap": "^4.5.3",
     "jquery": "^3.4.1",
+    "next": "latest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "smoothscroll-polyfill": "^0.4.4"
@@ -20,29 +43,21 @@
     "@types/node": "^12.19.3",
     "@types/react": "^16.9.55",
     "@types/smoothscroll-polyfill": "^0.3.1",
-    "next": "^10.0.0",
-    "node-sass": "^4.12.0",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "node-sass": "^4.0.0",
+    "prettier": "2.1.2",
+    "prettier-plugin-organize-imports": "^1.1.1",
+    "prettier-plugin-packagejson": "^2.2.7",
     "typescript": "^4.0.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/genuinezack/my-homepage"
-  },
-  "keywords": [
-    "node",
-    "homepage",
-    "react"
-  ],
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "export": "next build && next export"
-  },
-  "license": "MIT",
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }
