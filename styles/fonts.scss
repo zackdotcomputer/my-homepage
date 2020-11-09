@@ -63,7 +63,8 @@ p {
   line-height: 1.7;
 }
 
-a {
+a,
+button.btn-link {
   color: $white;
   border-bottom: 1px dashed $white;
   font-weight: bold;

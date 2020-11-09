@@ -1,22 +1,22 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
-import React, { Fragment } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAppStoreIos,
-  faJsSquare,
-  faReact,
-  faHtml5,
+  faAws,
   faCss3Alt,
-  faNode,
-  faSass,
+  faHtml5,
+  faJsSquare,
   faLess,
-  faAws
+  faNode,
+  faReact,
+  faSass
 } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
 const PresentFocus = () => (
-  <Fragment>
+  <>
     <h1 id="present">
       My <strong>Present</strong> Focus
     </h1>
@@ -28,7 +28,7 @@ const PresentFocus = () => (
         <a href="mailto:outreach@zacksheppard.com">send me an email</a>.
       </p>
       <p>
-        Additionally, I'm working on building tool and code to improve the
+        Additionally, I&rsquo;m working on building tool and code to improve the
         open-source community and the closed-source developer experience.
       </p>
     </div>
@@ -79,7 +79,7 @@ const PresentFocus = () => (
         </div>
       </div>
     </div>
-  </Fragment>
+  </>
 );
 
 export default PresentFocus;

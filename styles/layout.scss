@@ -149,6 +149,10 @@
       opacity: 0;
 
       @include transition(opacity 0.5s linear);
+
+      button.btn-link {
+        border-bottom: none;
+      }
     }
 
     &.scrolled .back-to-top {

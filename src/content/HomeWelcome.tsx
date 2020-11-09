@@ -1,18 +1,18 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
-import React, { Fragment } from "react";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 import {
-  faLinkedinIn,
   faGithub,
-  faTwitter,
-  faInstagram
+  faInstagram,
+  faLinkedinIn,
+  faTwitter
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+import React from "react";
 
 const HomeWelcome = () => (
-  <Fragment>
+  <>
     <h3>Hi! I&rsquo;m</h3>
     <h1 className="big">
       <strong>Zack Sheppard</strong>
@@ -55,7 +55,7 @@ const HomeWelcome = () => (
           rel="noopener noreferrer"
           href="https://www.linkedin.com/in/zacksheppard/"
         >
-          <span className="sr-only">Zack's LinkedIn</span>
+          <span className="sr-only">Zack&rsquo;s LinkedIn</span>
           <FontAwesomeIcon icon={faLinkedinIn} />
         </a>
         <a
@@ -63,7 +63,7 @@ const HomeWelcome = () => (
           rel="noopener noreferrer"
           href="https://www.github.com/genuinezack"
         >
-          <span className="sr-only">Zack's Github</span>
+          <span className="sr-only">Zack&rsquo;s Github</span>
           <FontAwesomeIcon icon={faGithub} />
         </a>
       </div>
@@ -73,7 +73,7 @@ const HomeWelcome = () => (
           rel="noopener noreferrer"
           href="https://www.twitter.com/genuinezack"
         >
-          <span className="sr-only">Zack's Twitter</span>
+          <span className="sr-only">Zack&rsquo;s Twitter</span>
           <FontAwesomeIcon icon={faTwitter} />
         </a>
         <a
@@ -81,7 +81,7 @@ const HomeWelcome = () => (
           rel="noopener noreferrer"
           href="https://www.instagram.com/genuinezack"
         >
-          <span className="sr-only">Zack's Instagram</span>
+          <span className="sr-only">Zack&rsquo;s Instagram</span>
           <FontAwesomeIcon icon={faInstagram} />
         </a>
       </div>
@@ -96,7 +96,7 @@ const HomeWelcome = () => (
         the code that powers this site on Github
       </a>
     </div>
-  </Fragment>
+  </>
 );
 
 export default HomeWelcome;

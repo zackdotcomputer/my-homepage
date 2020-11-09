@@ -2,12 +2,10 @@
 
 import React from "react";
 
-export default class HeroImage extends React.PureComponent {
-  render() {
-    return (
-      <div id="hero">
-        <div className="hero-background" />
-      </div>
-    );
-  }
+export default function HeroImage() {
+  return (
+    <div id="hero">
+      <div className="hero-background" />
+    </div>
+  );
 }

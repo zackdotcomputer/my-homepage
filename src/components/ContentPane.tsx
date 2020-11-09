@@ -1,57 +1,42 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
-import React from "react";
+import React, {
+  PropsWithChildren,
+  useCallback,
+  useEffect,
+  useState
+} from "react";
 import BackToTop from "./BackToTop";
 
-interface State {
-  significantlyScrolled: boolean;
-}
+const ContentPane = ({ children }: PropsWithChildren<{}>) => {
+  const [significantlyScrolled, setSignificantlyScrolled] = useState(false);
 
-export default class ContentPane extends React.PureComponent<
-  {
-    children: React.ReactChild | React.ReactChild[];
-  },
-  State
-> {
-  constructor(props: any) {
-    super(props);
-
-    this.state = {
-      significantlyScrolled: false
-    };
-  }
-
-  componentDidMount() {
-    this._handleScroll();
-    window.addEventListener("scroll", this._handleScroll, {
-      passive: true
-    });
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this._handleScroll);
-  }
-
-  _handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const scrollTop = window.scrollY || 0;
     const significance = 200;
 
-    const significantlyScrolled = scrollTop >= significance;
+    const isNowSignificant = scrollTop >= significance;
 
-    this.setState({
-      significantlyScrolled
+    setSignificantlyScrolled(isNowSignificant);
+  }, []);
+
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, {
+      passive: true
     });
-  };
 
-  render() {
-    return (
-      <div
-        id="content"
-        className={this.state.significantlyScrolled ? "scrolled" : ""}
-      >
-        <BackToTop />
-        {this.props.children}
-      </div>
-    );
-  }
-}
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <div id="content" className={significantlyScrolled ? "scrolled" : ""}>
+      <BackToTop />
+      {children}
+    </div>
+  );
+};
+
+export default ContentPane;

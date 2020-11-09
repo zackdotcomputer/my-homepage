@@ -1,10 +1,10 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
-import React, { Fragment } from "react";
+import React from "react";
 import ResumeItem from "../components/ResumeItem";
 
 const ResumeSection = () => (
-  <Fragment>
+  <>
     <h1 id="resume">
       <strong>Past</strong> Work and Projects
     </h1>
@@ -21,8 +21,8 @@ const ResumeSection = () => (
     </p>
     <ResumeItem title="Freelance Work" dates="2018 - Present">
       <p>
-        I'm available for hire as a freelance engineer, manager, consultant, and
-        mentor. Some of my featured clients include:
+        I&rsquo;m available for hire as a freelance engineer, manager,
+        consultant, and mentor. Some of my featured clients include:
       </p>
       <h5>Candid&trade;</h5>
       <p>
@@ -35,7 +35,7 @@ const ResumeSection = () => (
         >
           Candid&trade;
         </a>
-        . I've worked both in native code and React Native to mature their
+        . I&rsquo;ve worked both in native code and React Native to mature their
         app&rsquo;s experience and development process.
       </p>
       <h5>Trialspark &amp; Fi Marketing Sites</h5>
@@ -54,7 +54,7 @@ const ResumeSection = () => (
         </a>{" "}
         to construct their new marketing homepages. Given the specific
         requirements these companies had, I worked with their teams to quickly
-        build out beautiful and interactive sites based on modern frameworks.
+        build out beautiful and interactive sites based on modern frameworks.
       </p>
       <h5>Deer Meets Beer (for Foursquare and Jägermeister)</h5>
       <p>
@@ -110,15 +110,17 @@ const ResumeSection = () => (
       </p>
       <p>
         The next two summers, I interned at Google on their search
-        infrastructure team and then on the Google Sheets team. If you've ever
-        used "Paint Format" in Google Sheets, that was my project.
+        infrastructure team and then on the Google Sheets team. If you&rsquo;ve
+        ever used &ldquo;Paint Format&rdquo; in Google Sheets, that was my
+        project.
       </p>
     </ResumeItem>
     <ResumeItem title="Education" dates="2006 - 2011">
       <h5>Williams College and Columbia University</h5>
       <p>
-        I've been programming in BASIC, Java, and HTML since 1998, but I started
-        learning formal computer science while in high school, taking classes at{" "}
+        I&rsquo;ve been programming in BASIC, Java, and HTML since 1998, but I
+        started learning formal computer science while in high school, taking
+        classes at{" "}
         <a
           href="http://www.williams.edu"
           target="_blank"
@@ -141,7 +143,7 @@ const ResumeSection = () => (
         lot of theatre).
       </p>
     </ResumeItem>
-  </Fragment>
+  </>
 );
 
 export default ResumeSection;

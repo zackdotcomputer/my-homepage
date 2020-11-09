@@ -7,21 +7,28 @@ import env from "./env";
 export const GA_TRACKING_ID = (env && env.GOOGLE_ANALYTICS_ID) || undefined;
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
-export const pageview = url => {
+export const pageview = (url: string) => {
   if (GA_TRACKING_ID) {
-    window.gtag("config", GA_TRACKING_ID, {
+    (window as any).gtag("config", GA_TRACKING_ID, {
       page_location: url
     });
   }
 };
 
+interface EventArgs {
+  action: string;
+  category: string;
+  label: string;
+  value: string;
+}
+
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
-export const event = ({ action, category, label, value }) => {
+export const event = ({ action, category, label, value }: EventArgs) => {
   if (GA_TRACKING_ID) {
-    window.gtag("event", action, {
+    (window as any).gtag("event", action, {
       event_category: category,
       event_label: label,
-      value: value
+      value
     });
   }
 };

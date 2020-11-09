@@ -1,7 +1,7 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
-import React from "react";
 import Head from "next/head";
+import React, { useMemo } from "react";
 
 export enum HeadTagsTitleConcatMode {
   // If there's a page title, use only it. Otherwise, use site title if defined.
@@ -35,91 +35,74 @@ export interface Props {
   disallowRobots?: boolean;
 }
 
-export default class HeadTags extends React.PureComponent<Props> {
-  _getPageTitle(): string {
-    if (this.props.pageTitle && this.props.siteTitle) {
-      switch (this.props.titleConcatenationMode) {
+export default function HeadTags({
+  pageTitle,
+  siteTitle,
+  description,
+  titleConcatenationMode,
+  faviconUrl,
+  imageUrlForFacebook,
+  imageUrlForTwitter,
+  manifestUrl,
+  canonicalUrl,
+  twitterHandle,
+  disallowRobots
+}: Props) {
+  const computedPageTitle: string = useMemo(() => {
+    if (pageTitle && siteTitle) {
+      switch (titleConcatenationMode) {
         case HeadTagsTitleConcatMode.pageFirst:
-          return `${this.props.pageTitle} - ${this.props.siteTitle}`;
+          return `${pageTitle} - ${siteTitle}`;
         case HeadTagsTitleConcatMode.siteFirst:
-          return `${this.props.siteTitle} - ${this.props.pageTitle}`;
+          return `${siteTitle} - ${pageTitle}`;
         // case HeadTagsTitleConcatMode.noConcatenation:
         default:
-          return this.props.pageTitle;
+          return pageTitle;
       }
-    } else if (this.props.pageTitle) {
-      return this.props.pageTitle;
-    } else if (this.props.siteTitle) {
-      return this.props.siteTitle;
+    } else if (pageTitle) {
+      return pageTitle;
+    } else if (siteTitle) {
+      return siteTitle;
     }
 
     return "";
-  }
+  }, [pageTitle, siteTitle, titleConcatenationMode]);
 
-  render() {
-    return (
-      <Head>
-        {/* HTML meta Tags */}
-        <meta charSet="UTF-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <title>{this._getPageTitle()}</title>
-        {this.props.disallowRobots && <meta name="robots" content="noindex" />}
-        {this.props.faviconUrl && (
-          <link rel="icon" type="image/png" href={this.props.faviconUrl} />
-        )}
-        {this.props.manifestUrl && (
-          <link rel="manifest" href={this.props.manifestUrl} />
-        )}
-        {this.props.description && (
-          <meta name="description" content={this.props.description} />
-        )}
-        {this.props.canonicalUrl && (
-          <link rel="canonical" href={this.props.canonicalUrl} />
-        )}
-        {/* Facebook OpenGraph Tags */}
-        <meta property="og:type" content="article" />
-        {this.props.pageTitle && (
-          <meta property="og:title" content={this.props.pageTitle} />
-        )}
-        {this.props.siteTitle && (
-          <meta property="og:site_name" content={this.props.siteTitle} />
-        )}
-        {this.props.canonicalUrl && (
-          <meta property="og:url" content={this.props.canonicalUrl} />
-        )}
-        {this.props.description && (
-          <meta property="og:description" content={this.props.description} />
-        )}
-        {this.props.imageUrlForFacebook && (
-          <meta property="og:image" content={this.props.imageUrlForFacebook} />
-        )}
-        {/* Twitter Card Tags */}
-        <meta name="twitter:title" content={this._getPageTitle()} />
-        {this.props.imageUrlForTwitter && (
-          <meta name="twitter:card" content="summary_large_image" />
-        )}
-        {this.props.imageUrlForTwitter && (
-          <meta
-            name="twitter:image:src"
-            content={this.props.imageUrlForTwitter}
-          />
-        )}
-        {!this.props.imageUrlForTwitter && (
-          <meta name="twitter:card" content="summary" />
-        )}
-        {this.props.twitterHandle && (
-          <meta name="twitter:site" content={this.props.twitterHandle} />
-        )}
-        {this.props.twitterHandle && (
-          <meta name="twitter:creator" content={this.props.twitterHandle} />
-        )}
-        {this.props.description && (
-          <meta name="twitter:description" content={this.props.description} />
-        )}
-      </Head>
-    );
-  }
+  return (
+    <Head>
+      {/* HTML meta Tags */}
+      <meta charSet="UTF-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+      <title>{computedPageTitle}</title>
+      {disallowRobots && <meta name="robots" content="noindex" />}
+      {faviconUrl && <link rel="icon" type="image/png" href={faviconUrl} />}
+      {manifestUrl && <link rel="manifest" href={manifestUrl} />}
+      {description && <meta name="description" content={description} />}
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      {/* Facebook OpenGraph Tags */}
+      <meta property="og:type" content="article" />
+      {pageTitle && <meta property="og:title" content={pageTitle} />}
+      {siteTitle && <meta property="og:site_name" content={siteTitle} />}
+      {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+      {description && <meta property="og:description" content={description} />}
+      {imageUrlForFacebook && (
+        <meta property="og:image" content={imageUrlForFacebook} />
+      )}
+      {/* Twitter Card Tags */}
+      <meta name="twitter:title" content={computedPageTitle} />
+      {imageUrlForTwitter && (
+        <meta name="twitter:card" content="summary_large_image" />
+      )}
+      {imageUrlForTwitter && (
+        <meta name="twitter:image:src" content={imageUrlForTwitter} />
+      )}
+      {!imageUrlForTwitter && <meta name="twitter:card" content="summary" />}
+      {twitterHandle && <meta name="twitter:site" content={twitterHandle} />}
+      {twitterHandle && <meta name="twitter:creator" content={twitterHandle} />}
+      {description && <meta name="twitter:description" content={description} />}
+    </Head>
+  );
 }
