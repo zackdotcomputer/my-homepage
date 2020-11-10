@@ -1,6 +1,5 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
-import Image from "next/image";
 import React from "react";
 
 const BackToTop = () => {
@@ -14,14 +13,11 @@ const BackToTop = () => {
   return (
     <div className="back-to-top">
       <button className="btn btn-link" onClick={backToTop} type="button">
-        <Image
+        <img
           className="cta-arrow"
-          width="34"
-          height="12"
           src="/static/img/arrow-up.png"
           alt="arrow pointing up"
         />
-        <br />
         (Back to top)
       </button>
     </div>
