@@ -1,0 +1,142 @@
+@import "tailwindcss/base";
+
+/* Write your own custom base styles here */
+
+/* Start purging... */
+@import "tailwindcss/components";
+/* Stop purging. */
+
+/* Write your own custom component styles here */
+@font-face {
+  font-family: "Museo";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/webfonts/389018_0_0.eot");
+  src: url("/webfonts/389018_0_0.eot?#iefix") format("embedded-opentype"),
+    url("/webfonts/389018_0_0.woff2") format("woff2"),
+    url("/webfonts/389018_0_0.woff") format("woff"),
+    url("/webfonts/389018_0_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Museo";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/webfonts/389018_1_0.eot");
+  src: url("/webfonts/389018_1_0.eot?#iefix") format("embedded-opentype"),
+    url("/webfonts/389018_1_0.woff2") format("woff2"),
+    url("/webfonts/389018_1_0.woff") format("woff"),
+    url("/webfonts/389018_1_0.ttf") format("truetype");
+}
+
+/* Start purging... */
+@import "tailwindcss/utilities";
+/* Stop purging. */
+
+/* Your own custom utilities */
+
+.conversation-flow {
+  @apply flex;
+  @apply flex-col;
+  @apply justify-end;
+  @apply content-start;
+}
+
+.conversation-block {
+  transition: height;
+  overflow: hidden;
+
+  @apply duration-500;
+  @apply ease-out;
+  @apply my-3;
+}
+
+.conversation-block.choices-block {
+  @apply duration-1000;
+}
+
+.conversation-block.no-show {
+  height: 0px;
+  opacity: 0;
+}
+
+.choose-your-own {
+  @apply font-mono;
+}
+
+.choose-your-own li.choice {
+  @apply opacity-75;
+
+  @apply transition-opacity;
+  @apply duration-100;
+  @apply ease-in-out;
+
+  @apply my-1;
+}
+
+.choose-your-own li.choice:hover {
+  @apply opacity-100;
+}
+
+.choose-your-own li:before {
+  content: "> ";
+}
+
+.choose-your-own li.choice button {
+  border-bottom: 1px;
+  border-style: dashed;
+  @apply border-current;
+  @apply text-current;
+}
+
+.choose-your-own li.choice button:hover {
+  border-style: solid;
+  @apply text-current;
+  @apply opacity-100;
+}
+
+.site-logo g {
+  fill: url(#zfile-logo_svg__HoverGradient);
+  opacity: 0;
+  @apply transition-opacity;
+  @apply duration-200;
+  @apply ease-in;
+}
+
+.site-logo g:first-child {
+  @apply fill-current;
+  opacity: 1;
+}
+
+.site-logo svg:hover g {
+  opacity: 1;
+}
+
+@layer base {
+  body,
+  html {
+    @apply .min-h-full;
+  }
+
+  body {
+    @apply .bg-gradient-to-b;
+    @apply .bg-cover;
+
+    @apply .from-blue-100;
+    @apply .to-white;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      @apply .from-gray-900;
+      @apply .to-gray-800;
+
+      @apply .text-white;
+    }
+  }
+
+  h1 {
+    @apply .font-title;
+    @apply .text-3xl;
+  }
+}

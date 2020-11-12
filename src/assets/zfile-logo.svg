@@ -1,0 +1,19 @@
+<svg width="42" height="47" viewBox="0 0 42 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="solid">
+    <path d="M39.1674 39.1674H5.875V17.625H39.1674V11.75H27.4174V0H0V47H39.1674V39.1674Z" fill="#1A202C"/>
+    <path d="M29.375 0V9.79245H39.1674L29.375 0Z" fill="#1A202C"/>
+    <path d="M41.125 37.2075V19.5825H7.83252V37.2075H41.125ZM13.7099 33.2924H11.7523V31.3348H13.7099V33.2924ZM23.5 27.4174H21.5424V29.3749H17.625V31.3325H23.5V33.29H15.6674V29.3726H17.625V27.415H21.5424V25.4575H15.6674V23.4999H23.5V27.4174Z" fill="#1A202C"/>
+  </g>
+  <g id="hover-gradient-logo">
+    <path d="M39.1674 39.1674H5.875V17.625H39.1674V11.75H27.4174V0H0V47H39.1674V39.1674Z" fill="url(#HoverGradient)"/>
+    <path d="M29.375 0V9.79245H39.1674L29.375 0Z" fill="url(#HoverGradient)"/>
+    <path d="M41.125 37.2075V19.5825H7.83252V37.2075H41.125ZM13.7099 33.2924H11.7523V31.3348H13.7099V33.2924ZM23.5 27.4174H21.5424V29.3749H17.625V31.3325H23.5V33.29H15.6674V29.3726H17.625V27.415H21.5424V25.4575H15.6674V23.4999H23.5V27.4174Z" fill="url(#HoverGradient)"/>
+  </g>
+<defs>
+  <linearGradient id="HoverGradient">
+    <stop offset="1%" stop-color="#E40034" />
+    <stop offset="50%" stop-color="#BD00A9" />
+    <stop offset="99%" stop-color="#5200C1" />
+  </linearGradient>
+</defs>
+</svg>
