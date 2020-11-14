@@ -1,6 +1,7 @@
 import React from "react";
+import Response from "../../Response";
 import ConversationStop from "./ConversationStop";
-import DidChoseYourOwn from "./DidChoseYourOwn";
+import MadeChoice from "./MadeChoice";
 
 interface Props {
   stop: ConversationStop;
@@ -9,8 +10,8 @@ interface Props {
 const ConversationStopContents = ({ stop }: Props) => {
   return (
     <>
-      {stop.prompt && <DidChoseYourOwn chose={stop.prompt} />}
-      {stop.response && <p>{stop.response}</p>}
+      {stop.prompt && <MadeChoice>{stop.prompt}</MadeChoice>}
+      {stop.response && <Response>{stop.response}</Response>}
       {stop.page}
     </>
   );

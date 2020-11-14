@@ -12,7 +12,12 @@ const ConversationBlock = ({
   animated,
   className
 }: React.PropsWithChildren<BlockProps>) => {
-  const classNames = ["conversation-block"];
+  const classNames = [
+    "conversation-block",
+    "overflow-hidden",
+    "default-transition",
+    "my-3"
+  ];
 
   if (className) {
     classNames.push(className);
@@ -76,10 +81,6 @@ const ConversationBlock = ({
 
     return undefined;
   }, [hasRenderedVisible, isVisible, renderedElement.current, animated]);
-
-  if (className) {
-    console.debug("Setting style and classes to", style, classNames);
-  }
 
   return (
     <div ref={renderedElement} style={style} className={classNames.join(" ")}>

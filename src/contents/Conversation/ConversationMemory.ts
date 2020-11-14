@@ -1,16 +1,16 @@
 import { useCallback, useState } from "react";
-import ConversationStop, { ConversationDestination } from "./ConversationStop";
+import { ConversationDestination } from "./ConversationPrompt";
+import { ConversationStop } from "./ConversationStop";
 
-export interface ConversationModel {
-  count: number;
-  getter: (i: number) => ConversationStop;
+export interface ConversationMemory {
+  stack: ConversationStop[];
   addToStack: (nextStop: ConversationDestination) => any;
   handleNavigation: (newPage: React.ReactChild) => any;
 }
 
-const useConversationModel = (
+const useConversationMemory = (
   firstStop?: ConversationStop
-): ConversationModel => {
+): ConversationMemory => {
   const [pageStack, setPageStack] = useState<ConversationStop[]>(() =>
     firstStop ? [firstStop] : []
   );
@@ -34,19 +34,11 @@ const useConversationModel = (
     [pageStack]
   );
 
-  const getter = useCallback(
-    (ind: number): ConversationStop => {
-      return pageStack[ind];
-    },
-    [pageStack]
-  );
-
   return {
-    count: pageStack.length,
-    getter,
+    stack: pageStack,
     addToStack,
     handleNavigation
   };
 };
 
-export default useConversationModel;
+export default useConversationMemory;

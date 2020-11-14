@@ -44,6 +44,9 @@ module.exports = {
           }
         }
       },
+      transitionProperty: {
+        height: "height"
+      },
       animation: {
         convoCard: "slideAndFadeIn 0.5s ease-out 1",
         "convoCard-hide": "slideAndFadeOut 0.5s ease-out 1"
@@ -51,7 +54,10 @@ module.exports = {
     }
   },
   variants: {
-    display: ["responsive", "dark"]
+    display: ["responsive", "dark"],
+    backgroundColor: ["responsive", "hover", "focus", "dark"],
+    borderColor: ["responsive", "hover", "focus", "dark"],
+    borderStyle: ["responsive", "hover"]
   },
   plugins: [
     require("tailwindcss-prefers-dark-mode")({

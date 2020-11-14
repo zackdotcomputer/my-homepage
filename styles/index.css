@@ -2,11 +2,6 @@
 
 /* Write your own custom base styles here */
 
-/* Start purging... */
-@import "tailwindcss/components";
-/* Stop purging. */
-
-/* Write your own custom component styles here */
 @font-face {
   font-family: "Museo";
   font-weight: bold;
@@ -29,71 +24,22 @@
     url("/webfonts/389018_1_0.ttf") format("truetype");
 }
 
+.no-show {
+  @apply h-0;
+  @apply opacity-0;
+}
+
 /* Start purging... */
-@import "tailwindcss/utilities";
+@import "tailwindcss/components";
 /* Stop purging. */
 
-/* Your own custom utilities */
-
-.conversation-flow {
-  @apply flex;
-  @apply flex-col;
-  @apply justify-end;
-  @apply content-start;
-}
-
-.conversation-block {
-  transition: height;
-  overflow: hidden;
-
-  @apply duration-500;
-  @apply ease-out;
-  @apply my-3;
-}
-
-.conversation-block.choices-block {
-  @apply duration-1000;
-}
-
-.conversation-block.no-show {
-  height: 0px;
-  opacity: 0;
-}
-
-.choose-your-own {
-  @apply font-mono;
-}
-
-.choose-your-own li.choice {
-  @apply opacity-75;
-
-  @apply transition-opacity;
-  @apply duration-100;
-  @apply ease-in-out;
-
-  @apply my-1;
-}
-
-.choose-your-own li.choice:hover {
-  @apply opacity-100;
-}
+/* Write your own custom component styles here */
 
 .choose-your-own li:before {
   content: "> ";
 }
 
-.choose-your-own li.choice button {
-  border-bottom: 1px;
-  border-style: dashed;
-  @apply border-current;
-  @apply text-current;
-}
-
-.choose-your-own li.choice button:hover {
-  border-style: solid;
-  @apply text-current;
-  @apply opacity-100;
-}
+/* Custom CSS to fix the SVG items */
 
 .site-logo g {
   fill: url(#zfile-logo_svg__HoverGradient);
@@ -110,6 +56,28 @@
 
 .site-logo svg:hover g {
   opacity: 1;
+}
+
+.loading-spinner circle {
+  @apply opacity-25;
+}
+
+.loading-spinner path {
+  @apply opacity-75;
+}
+
+/* Start purging... */
+@import "tailwindcss/utilities";
+/* Stop purging. */
+
+/* Your own custom utilities */
+
+.default-transition {
+  @apply duration-200;
+  @apply ease-out;
+
+  @apply transition-opacity;
+  @apply transition-height;
 }
 
 @layer base {
