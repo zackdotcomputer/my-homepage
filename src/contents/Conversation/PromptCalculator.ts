@@ -126,8 +126,14 @@ const usePromptCalculator = (
   );
 
   // First we calculate the center prompts:
-  const lastChoice =
-    stack.length > 1 ? stack[stack.length - 1].choice : undefined;
+  let lastChoice: ConversationDestination | undefined;
+
+  for (let i = stack.length - 1; i >= 0; i -= 1) {
+    if (stack[i].choice) {
+      lastChoice = stack[i].choice;
+      break;
+    }
+  }
 
   const lastChoiceWasContact =
     lastChoice?.id === "work-cta" || lastChoice?.id.startsWith("contact-");
