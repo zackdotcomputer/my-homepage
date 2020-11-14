@@ -34,7 +34,7 @@ const cancelPrompts: ConversationDestination[] = [
   },
   {
     id: "cancel-3",
-    prompt: "This was cool and all, but take me back to the start.",
+    prompt: "Cool, thanks. Take me back to the start.",
     href: "/"
   }
 ];

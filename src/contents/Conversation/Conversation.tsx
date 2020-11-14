@@ -91,7 +91,7 @@ const Conversation = ({ path, contents: baseContents }: Props) => {
     "md:col-span-8",
     "md:col-start-2",
     "lg:col-start-0",
-    "pb-16",
+    "pb-20",
     "xl:pb-56",
     "flex",
     "flex-col",
