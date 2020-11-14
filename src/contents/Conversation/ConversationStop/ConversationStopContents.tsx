@@ -1,5 +1,5 @@
 import React from "react";
-import Response from "../../Response";
+import Response from "../Response";
 import ConversationStop from "./ConversationStop";
 import MadeChoice from "./MadeChoice";
 

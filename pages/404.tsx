@@ -1,7 +1,7 @@
 // Created 11/2020 by Zack Sheppard (zacksheppard.com)
 
 import React from "react";
-import Response from "../src/contents/Response";
+import Response from "../src/contents/Conversation/Response";
 
 const NotFound = () => (
   <Response>

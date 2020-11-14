@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import RenderedChoice from "../RenderedChoice";
 import ConversationDestination from "./ConversationDestination";
 
 interface Props {
@@ -14,16 +15,6 @@ const Choice = ({
   option: ConversationDestination;
   onSelection: () => unknown;
 }) => {
-  const classes = [
-    "choice",
-    "opacity-75",
-    "transition-opacity",
-    "duration-100",
-    "ease-in-out",
-    "my-1",
-    "hover:opacity-100"
-  ].join(" ");
-
   const buttonClasses = [
     "border-b",
     "border-dashed",
@@ -32,24 +23,31 @@ const Choice = ({
     "hover:border-solid"
   ].join(" ");
 
+  const choiceClasses = [
+    "transition-opacity",
+    "duration-100",
+    "ease-in-out",
+    "hover:opacity-100"
+  ].join(" ");
+
   if (option.href) {
     return (
-      <li className={classes}>
+      <RenderedChoice className={choiceClasses} id={option.id}>
         <Link href={option.href}>
           {/* eslint-disable-next-line */}
           <a onClick={onSelection} role="link" className={buttonClasses}>
             {option.prompt}
           </a>
         </Link>
-      </li>
+      </RenderedChoice>
     );
   } else {
     return (
-      <li className={classes}>
+      <RenderedChoice className={choiceClasses} id={option.id}>
         <button type="button" onClick={onSelection} className={buttonClasses}>
           {option.prompt}
         </button>
-      </li>
+      </RenderedChoice>
     );
   }
 };
@@ -60,7 +58,7 @@ const ChooseYourOwn = ({ options, onSelection }: Props) => {
       {options.map((opt) => {
         return (
           <Choice
-            key={opt.prompt}
+            key={opt.id}
             option={opt}
             onSelection={() => onSelection(opt)}
           />

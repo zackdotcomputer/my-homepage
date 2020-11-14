@@ -2,8 +2,8 @@ import React, { useCallback, useEffect, useState } from "react";
 import ResponsiveLogo from "../ResponsiveLogo";
 import WelcomeIntro from "../WelcomeIntro";
 import useConversationMemory from "./ConversationMemory";
-import { ConversationDestination } from "./ConversationPrompt";
 import ConversationStopContents from "./ConversationStop/ConversationStopContents";
+import usePromptCalculator from "./PromptCalculator";
 import RenderedConversation from "./RenderedConversation";
 
 interface Props {
@@ -12,14 +12,6 @@ interface Props {
 }
 
 const Conversation = ({ path, contents }: Props) => {
-  const openingQuestion: ConversationDestination[] = [
-    { prompt: "Show me your credentials.", href: "resume" },
-    { prompt: "Cool. What are your hobbies?", href: "hobbies" },
-    { prompt: "I want to work with you!", href: "contact" },
-    { prompt: "What’re you thinking about?", href: "blog" },
-    { prompt: "This is weird. Show me a normal homepage.", href: "normcore" }
-  ];
-
   const [lastLoggedPath, setLastLoggedPath] = useState<string | undefined>(
     undefined
   );
@@ -32,6 +24,8 @@ const Conversation = ({ path, contents }: Props) => {
     contentsAreEmptyFragment ? { page: contents } : undefined
   );
   const blockCount = convo.stack.length + 2; // 2 for logo and welcome
+
+  const nextQuestions = usePromptCalculator(convo.madeChoiceIds, convo.stack);
 
   useEffect(() => {
     if (path !== lastLoggedPath && !contentsAreEmptyFragment) {
@@ -84,7 +78,7 @@ const Conversation = ({ path, contents }: Props) => {
         className={conversationClasses}
         blockCount={blockCount}
         getBlock={getBlock}
-        choices={openingQuestion}
+        choices={nextQuestions}
         onChoice={convo.addToStack}
       />
     </div>
