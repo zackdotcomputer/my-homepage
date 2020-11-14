@@ -1,4 +1,11 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, {
+  ReactElement,
+  ReactNodeArray,
+  useCallback,
+  useEffect,
+  useState
+} from "react";
+import ZackHeadTags from "../../layout/ZackHeadTags";
 import ResponsiveLogo from "../ResponsiveLogo";
 import WelcomeIntro from "../WelcomeIntro";
 import useConversationMemory from "./ConversationMemory";
@@ -11,10 +18,32 @@ interface Props {
   contents: React.ReactElement;
 }
 
-const Conversation = ({ path, contents }: Props) => {
+const Conversation = ({ path, contents: baseContents }: Props) => {
   const [lastLoggedPath, setLastLoggedPath] = useState<string | undefined>(
     undefined
   );
+
+  const [headTags, setHeadTags] = useState<React.ReactElement>(
+    <ZackHeadTags />
+  );
+
+  let foundHeadTags: React.ReactElement | undefined;
+  let contents: React.ReactElement = baseContents;
+
+  if (baseContents.type === React.Fragment) {
+    const { children } = baseContents.props as React.PropsWithChildren<unknown>;
+    if (Array.isArray(children)) {
+      const childArray = children as ReactNodeArray;
+      const headTagResult: ReactElement = childArray.find(
+        (n) => React.isValidElement(n) && n.type === ZackHeadTags
+      ) as ReactElement;
+      if (headTagResult) {
+        foundHeadTags = headTagResult;
+        setHeadTags(headTagResult);
+        contents = <>{childArray.filter((n) => n !== headTagResult)}</>;
+      }
+    }
+  }
 
   const contentsAreEmptyFragment =
     contents.type === React.Fragment &&
@@ -72,16 +101,19 @@ const Conversation = ({ path, contents }: Props) => {
   ].join(" ");
 
   return (
-    <div className="container grid grid-cols-12 gap-4 min-h-screen mx-auto px-2 md:px-1">
-      <RenderedConversation
-        staticRenderUntilIndex={0}
-        className={conversationClasses}
-        blockCount={blockCount}
-        getBlock={getBlock}
-        choices={nextQuestions}
-        onChoice={convo.addToStack}
-      />
-    </div>
+    <>
+      {foundHeadTags ?? headTags}
+      <div className="container grid grid-cols-12 gap-4 min-h-screen mx-auto px-2 md:px-1">
+        <RenderedConversation
+          staticRenderUntilIndex={0}
+          className={conversationClasses}
+          blockCount={blockCount}
+          getBlock={getBlock}
+          choices={nextQuestions}
+          onChoice={convo.addToStack}
+        />
+      </div>
+    </>
   );
 };
 
