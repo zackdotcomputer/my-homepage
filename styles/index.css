@@ -72,6 +72,10 @@
 
 /* Your own custom utilities */
 
+.title-red {
+  @apply text-red-600;
+}
+
 .default-transition {
   @apply duration-200;
   @apply ease-out;
@@ -110,13 +114,40 @@
   h5,
   h6 {
     @apply .font-title;
+    @apply pt-3;
+    @apply pb-1;
   }
 
   h1 {
     @apply .text-3xl;
   }
 
+  h2 {
+    @apply .text-2xl;
+  }
+
   h3 {
     @apply .text-lg;
+  }
+
+  p {
+    @apply pb-4;
+    line-height: 1.4;
+  }
+
+  p a {
+    @apply border-b;
+    @apply border-current;
+    @apply border-dashed;
+    @apply opacity-75;
+
+    @apply transition-opacity;
+    @apply duration-150;
+    @apply ease-in-out;
+  }
+
+  p a:hover {
+    @apply border-solid;
+    @apply opacity-100;
   }
 }

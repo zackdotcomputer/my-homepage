@@ -69,9 +69,19 @@ const RenderedConversation = ({
     );
   }
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+      });
+    }
+  }, [lastRendered, shouldShowLoading]);
+
   return (
     <div className={className}>
       {conversationBlocks}
+      <div className="flex-grow" />
       <ConversationPrompt
         options={choices}
         onSelection={handleSelection}

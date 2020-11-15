@@ -23,22 +23,12 @@ const ConversationPrompt = ({ options, onSelection, showLoading }: Props) => {
 
   const baseRef = useRef<HTMLDivElement>(null);
   const choicesRef = useRef<HTMLDivElement>(null);
-  const spinnerRef = useRef<HTMLDivElement>(null);
 
   const height: string | undefined = useMemo(() => {
-    if (!isCurrentlyShowingLoading) {
-      return !isTransitioning
-        ? undefined
-        : `${choicesRef.current?.scrollHeight ?? 0}px`;
-    } else {
-      return `${spinnerRef.current?.scrollHeight ?? 0}px`;
-    }
-  }, [
-    choicesRef.current,
-    spinnerRef.current,
-    isTransitioning,
-    isCurrentlyShowingLoading
-  ]);
+    return !isCurrentlyShowingLoading && !isTransitioning
+      ? undefined
+      : `${choicesRef.current?.scrollHeight ?? 0}px`;
+  }, [choicesRef.current, isTransitioning, isCurrentlyShowingLoading]);
 
   useEffect((): undefined | (() => void) => {
     if (!baseRef.current) {
@@ -82,7 +72,7 @@ const ConversationPrompt = ({ options, onSelection, showLoading }: Props) => {
 
   const classes = [
     "conversation-prompt",
-    "absolute",
+    "relative",
     "overflow-hidden",
     "bg-white",
     "dark:bg-gray-900",
@@ -94,16 +84,13 @@ const ConversationPrompt = ({ options, onSelection, showLoading }: Props) => {
     "max-w-lg",
     "rounded",
     "rounded-b-none",
-    "inset-x-0",
-    "bottom-0",
-    "default-transition"
+    "inset-x-0"
   ];
 
   return (
     <div ref={baseRef} className={classes.join(" ")} style={{ height }}>
       <div
-        ref={spinnerRef}
-        className="loading-spinner-container absolute top-0 left-0 py-6 right-0 flex items-center justify-center default-transition"
+        className="loading-spinner-container absolute inset-0 flex items-center justify-center default-transition"
         style={isCurrentlyShowingLoading ? visibleStyle : invisibleStyle}
       >
         <LoadingSpinner className="animate-spin text-blue-700 loading-spinner w-12 h-12" />

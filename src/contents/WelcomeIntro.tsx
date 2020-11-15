@@ -5,7 +5,7 @@ const WelcomeIntro = () => {
   return (
     <>
       <h1>
-        Hi! I&rsquo;m <span className="text-red-600">Zack Sheppard</span>.
+        Hi! I&rsquo;m <span className="title-red">Zack Sheppard</span>.
       </h1>
       <SectionBreak />
     </>

@@ -3,11 +3,19 @@ import { ConversationDestination } from "./ConversationPrompt";
 import { ConversationStop } from "./ConversationStop";
 
 const resumePrompts: ConversationDestination[] = [
-  { id: "resume-0", prompt: "Show me your credentials.", href: "resume" },
-  { id: "resume-1", prompt: "Are you legit?", href: "resume" },
-  { id: "resume-2", prompt: "What have you done?", href: "resume" },
-  { id: "resume-3", prompt: "Lemme see your resume.", href: "resume" },
-  { id: "resume-4", prompt: "What's on your CV?", href: "resume" }
+  {
+    id: "resume-0",
+    prompt: "Show me your credentials.",
+    response: "Coming right up!"
+  },
+  { id: "resume-1", prompt: "Are you legit?", response: "Too legit to quit!" },
+  { id: "resume-2", prompt: "What have you done?", response: "A few things:" },
+  { id: "resume-3", prompt: "Lemme see your resume.", response: "Sure thing:" },
+  {
+    id: "resume-4",
+    prompt: "What's on your CV?",
+    response: "Here are some highlights:"
+  }
 ];
 
 const workCTA: ConversationDestination = {
@@ -85,6 +93,24 @@ const contactOptions: ConversationDestination[] = [
   }
 ];
 
+const resumeSections: ConversationDestination[] = [
+  {
+    id: "experience-0",
+    prompt: "Tell me more about your skills.",
+    href: "/resume/skills"
+  },
+  {
+    id: "experience-1",
+    prompt: "Tell me more about your freelance work.",
+    href: "/resume/freelance"
+  },
+  {
+    id: "experience-2",
+    prompt: "Tell me more about your experience before that.",
+    href: "/resume/past"
+  }
+];
+
 const normcorePrompts: ConversationDestination[] = [
   {
     id: "normcore-0",
@@ -138,10 +164,16 @@ const usePromptCalculator = (
   const lastChoiceWasContact =
     lastChoice?.id === "work-cta" || lastChoice?.id.startsWith("contact-");
 
+  const lastChoiceWasResume =
+    lastChoice?.id.startsWith("resume-") ||
+    lastChoice?.id.startsWith("experience-");
+
   let centerPrompts: ConversationDestination[];
 
   if (lastChoiceWasContact) {
     centerPrompts = contactOptions;
+  } else if (lastChoiceWasResume) {
+    centerPrompts = [...resumeSections, workCTA];
   } else {
     const resumePrompt = lastChoice?.id.startsWith("resume-")
       ? []
