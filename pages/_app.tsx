@@ -5,7 +5,6 @@ import NormcoreLayout from "../src/layout/Normcore/NormcoreLayout";
 import "../styles/index.css";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  console.log(router.pathname);
   const isNormcore = router.pathname.startsWith("/normcore");
 
   if (isNormcore) {

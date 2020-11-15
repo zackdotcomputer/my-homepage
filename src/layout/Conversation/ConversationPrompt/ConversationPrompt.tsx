@@ -1,6 +1,6 @@
 import React from "react";
-import { ConversationDestination } from ".";
 import ChooseYourOwn from "./ChooseYourOwn";
+import ConversationDestination from "./ConversationDestination";
 import LoadingCard from "./LoadingCard";
 
 interface Props {
