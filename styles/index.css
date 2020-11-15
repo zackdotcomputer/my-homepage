@@ -58,6 +58,10 @@
   opacity: 1;
 }
 
+.loading-spinner-container {
+  min-height: 150px;
+}
+
 .loading-spinner circle {
   @apply opacity-25;
 }
@@ -135,7 +139,8 @@
     line-height: 1.4;
   }
 
-  p a {
+  p a,
+  .dashlink {
     @apply border-b;
     @apply border-current;
     @apply border-dashed;
@@ -146,7 +151,8 @@
     @apply ease-in-out;
   }
 
-  p a:hover {
+  p a:hover,
+  .dashlink:hover {
     @apply border-solid;
     @apply opacity-100;
   }

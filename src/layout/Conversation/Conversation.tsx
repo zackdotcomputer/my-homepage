@@ -5,9 +5,9 @@ import React, {
   useEffect,
   useState
 } from "react";
-import ZackHeadTags from "../../layout/ZackHeadTags";
-import ResponsiveLogo from "../ResponsiveLogo";
-import WelcomeIntro from "../WelcomeIntro";
+import ResponsiveLogo from "../../contents/ResponsiveLogo";
+import WelcomeIntro from "../../contents/WelcomeIntro";
+import ZackHeadTags from "../ZackHeadTags";
 import useConversationMemory from "./ConversationMemory";
 import ConversationStopContents from "./ConversationStop/ConversationStopContents";
 import usePromptCalculator from "./PromptCalculator";

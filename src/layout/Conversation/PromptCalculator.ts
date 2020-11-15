@@ -1,3 +1,4 @@
+import { useRouter } from "next/dist/client/router";
 import { useCallback } from "react";
 import { ConversationDestination } from "./ConversationPrompt";
 import { ConversationStop } from "./ConversationStop";
@@ -8,9 +9,21 @@ const resumePrompts: ConversationDestination[] = [
     prompt: "Show me your credentials.",
     response: "Coming right up!"
   },
-  { id: "resume-1", prompt: "Are you legit?", response: "Too legit to quit!" },
-  { id: "resume-2", prompt: "What have you done?", response: "A few things:" },
-  { id: "resume-3", prompt: "Lemme see your resume.", response: "Sure thing:" },
+  {
+    id: "resume-1",
+    prompt: "Are you legit?",
+    response: "Too legit to quit! What do you want to know more about?"
+  },
+  {
+    id: "resume-2",
+    prompt: "What have you done?",
+    response: "A few things. What do you want to know more about?"
+  },
+  {
+    id: "resume-3",
+    prompt: "Lemme see your resume.",
+    response: "Sure thing. What do you want to know about?"
+  },
   {
     id: "resume-4",
     prompt: "What's on your CV?",
@@ -115,22 +128,22 @@ const normcorePrompts: ConversationDestination[] = [
   {
     id: "normcore-0",
     prompt: "This is weird. Show me a normal homepage.",
-    href: "normcore"
+    href: "/normcore"
   },
   {
     id: "normcore-1",
     prompt: "I don't get this. Show me a normal homepage.",
-    href: "normcore"
+    href: "/normcore"
   },
   {
     id: "normcore-2",
     prompt: "Less conversation. More static html.",
-    href: "normcore"
+    href: "/normcore"
   },
   {
     id: "normcore-3",
     prompt: "Give me the normcore site instead.",
-    href: "normcore"
+    href: "/normcore"
   }
 ];
 
@@ -138,6 +151,8 @@ const usePromptCalculator = (
   pastChoices: Record<string, boolean>,
   stack: ConversationStop[]
 ): ConversationDestination[] => {
+  const { pathname } = useRouter();
+
   const pickOneFrom = useCallback(
     (options: ConversationDestination[]): ConversationDestination => {
       const seed = Math.floor(Math.random() * 25);
@@ -162,11 +177,19 @@ const usePromptCalculator = (
   }
 
   const lastChoiceWasContact =
-    lastChoice?.id === "work-cta" || lastChoice?.id.startsWith("contact-");
+    lastChoice?.id === "work-cta" ||
+    lastChoice?.id.startsWith("contact-") ||
+    pathname.endsWith("contact");
 
   const lastChoiceWasResume =
     lastChoice?.id.startsWith("resume-") ||
-    lastChoice?.id.startsWith("experience-");
+    lastChoice?.id.startsWith("experience-") ||
+    pathname.startsWith("/resume");
+
+  const lastChoiceWasHomepage =
+    (lastChoice === undefined || lastChoice.href === "/") &&
+    !lastChoiceWasContact &&
+    !lastChoiceWasResume;
 
   let centerPrompts: ConversationDestination[];
 
@@ -183,7 +206,7 @@ const usePromptCalculator = (
   }
 
   let exitPrompt: ConversationDestination;
-  if (lastChoice === undefined || lastChoice.href === "/") {
+  if (lastChoiceWasHomepage) {
     exitPrompt = pickOneFrom(normcorePrompts);
   } else {
     exitPrompt = pickOneFrom(cancelPrompts);

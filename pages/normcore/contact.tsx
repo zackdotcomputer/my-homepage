@@ -1,6 +1,6 @@
 import React from "react";
-import ContactContents from "../src/contents/ContactContents";
-import ZackHeadTags from "../src/layout/ZackHeadTags";
+import ContactContents from "../../src/contents/ContactContents";
+import ZackHeadTags from "../../src/layout/ZackHeadTags";
 
 const ContactPage = () => {
   return (

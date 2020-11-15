@@ -15,16 +15,16 @@ const FreelanceSection = () => {
           I was brought on by OrbitCME as their sole iOS app engineer. Their
           founder wanted to develop an app quickly to validate the market for
           it. Working closely with him and two other engineers on the server, we
-          were able to complete the{" "}
+          were able to complete and launch the{" "}
           <ExternalLink href="https://apps.apple.com/us/app/orbit-cme-search-discover/id1524243733">
             OrbitCME iOS app
           </ExternalLink>{" "}
-          in under 8 weeks of work.
+          on a very tight schedule.
         </p>
       </ResumeEntry>
       <ResumeEntry title="Cred.ai">
         <p>
-          I&rsquo; worked as a supporting engineer for the{" "}
+          I worked as a supporting engineer for the{" "}
           <ExternalLink href="https://apps.apple.com/us/app/cred-ai/id1393703565">
             Cred iOS App
           </ExternalLink>{" "}
@@ -36,10 +36,10 @@ const FreelanceSection = () => {
       </ResumeEntry>
       <ResumeEntry title="Candid™">
         <p>
-          While in New York, I was embedded into the{" "}
+          I was contracted to help the{" "}
           <ExternalLink href="https://www.candidco.com/">Candid</ExternalLink>{" "}
-          mobile and web development team. There, I acted as a lead and mentor,
-          helping train more junior engineers in managing a public app,
+          mobile and web development team. There, I acted as a consultant and
+          mentor, helping train more junior engineers in managing a public app,
           consulting on design decisions, and implementing key features on tight
           deadlines.
         </p>

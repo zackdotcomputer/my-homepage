@@ -1,6 +1,6 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ZackHeadTags from "../src/layout/ZackHeadTags";
 
 const Index = () => {
@@ -10,13 +10,19 @@ const Index = () => {
     "I'm making iOS and web apps in London. How are things?"
   ];
 
+  const [copyToUse, setCopyToUse] = useState<string>(copy[0]);
+
+  useEffect(() => {
+    setCopyToUse(copy[Math.floor(Math.random() * 25) % copy.length]);
+  }, []);
+
   return (
     <>
       <ZackHeadTags
         pageTitle="Conversational Homepage"
         canonicalURL="https://zack.computer"
       />
-      <h3>{copy[Math.floor(Math.random() * 25) % copy.length]}</h3>
+      <h3>{copyToUse}</h3>
     </>
   );
 };

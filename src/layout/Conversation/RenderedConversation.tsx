@@ -27,6 +27,10 @@ const RenderedConversation = ({
   const [lastRendered, setLastRendered] = useState(staticRenderUntilIndex);
   const [shouldShowLoading, setShouldShowLoading] = useState(true);
 
+  const [choicesToRender, setChoicesToRender] = useState<
+    ConversationDestination[]
+  >([]);
+
   useEffect(() => {
     if (lastRendered < blockCount - 1) {
       // If we're doing an initial render, don't wait at all until popping the next block.
@@ -46,6 +50,12 @@ const RenderedConversation = ({
 
     return undefined;
   }, [blockCount, lastRendered]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setChoicesToRender(choices);
+    }
+  }, [choices]);
 
   const handleSelection = useCallback(
     (picked: ConversationDestination) => {
@@ -81,9 +91,9 @@ const RenderedConversation = ({
   return (
     <div className={className}>
       {conversationBlocks}
-      <div className="flex-grow" />
       <ConversationPrompt
-        options={choices}
+        className="mt-3"
+        options={choicesToRender}
         onSelection={handleSelection}
         showLoading={shouldShowLoading}
       />
