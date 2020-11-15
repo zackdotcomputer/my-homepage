@@ -27,13 +27,13 @@ const resumePrompts: ConversationDestination[] = [
   {
     id: "resume-4",
     prompt: "What's on your CV?",
-    response: "Here are some highlights:"
+    response: "What can I tell you more about?"
   }
 ];
 
 const workCTA: ConversationDestination = {
   id: "work-cta",
-  prompt: "I want to work with you",
+  prompt: "I want to work with you.",
   response: "Ok - drop me a line!"
 };
 
@@ -101,7 +101,7 @@ const contactOptions: ConversationDestination[] = [
   },
   {
     id: "chat-mediums-3",
-    prompt: "I'd slide into your Twitter DMs",
+    prompt: "I'll slide into your Twitter DMs",
     href: "https://www.twitter.com/zackdotcomputer"
   }
 ];
