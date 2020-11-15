@@ -1,24 +1,30 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
-import ContentPane from "../src/components/ContentPane";
-import ImagePane from "../src/components/ImagePane";
-import HomeWelcome from "../src/content/HomeWelcome";
-import Page from "../src/layout/Page";
-import SplitSection from "../src/layout/SplitSection";
+import React, { useEffect, useState } from "react";
+import ZackHeadTags from "../src/layout/ZackHeadTags";
 
-const Index = () => (
-  <Page>
-    <ImagePane />
-    <ContentPane>
-      <SplitSection
-        id="welcome"
-        className="home-welcome"
-        image={<img src="/static/img/zack-suited.jpg" alt="Zack in a suit" />}
-      >
-        <HomeWelcome />
-      </SplitSection>
-    </ContentPane>
-  </Page>
-);
+const Index = () => {
+  const copy = [
+    "I'm a freelance full-stack software developer. I make iOS and web apps. How can I help?",
+    "I'm a freelance senior software developer. I make iOS and web apps. What's up?",
+    "I'm making iOS and web apps in London. How are things?"
+  ];
+
+  const [copyToUse, setCopyToUse] = useState<string>(copy[0]);
+
+  useEffect(() => {
+    setCopyToUse(copy[Math.floor(Math.random() * 25) % copy.length]);
+  }, []);
+
+  return (
+    <>
+      <ZackHeadTags
+        pageTitle="Conversational Homepage"
+        canonicalURL="https://zack.computer"
+      />
+      <h3>{copyToUse}</h3>
+    </>
+  );
+};
 
 export default Index;

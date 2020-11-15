@@ -22,6 +22,7 @@
     "prettier/prettier": "error",
     "@typescript-eslint/quotes": ["off"],
     "@typescript-eslint/comma-dangle": ["off"],
+    "@typescript-eslint/indent": ["off"],
     "no-use-before-define": "off",
     "class-methods-use-this": "off",
     "no-else-return": "off",

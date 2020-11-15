@@ -1,0 +1,159 @@
+@import "tailwindcss/base";
+
+/* Write your own custom base styles here */
+
+@font-face {
+  font-family: "Museo";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/webfonts/389018_0_0.eot");
+  src: url("/webfonts/389018_0_0.eot?#iefix") format("embedded-opentype"),
+    url("/webfonts/389018_0_0.woff2") format("woff2"),
+    url("/webfonts/389018_0_0.woff") format("woff"),
+    url("/webfonts/389018_0_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Museo";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/webfonts/389018_1_0.eot");
+  src: url("/webfonts/389018_1_0.eot?#iefix") format("embedded-opentype"),
+    url("/webfonts/389018_1_0.woff2") format("woff2"),
+    url("/webfonts/389018_1_0.woff") format("woff"),
+    url("/webfonts/389018_1_0.ttf") format("truetype");
+}
+
+.no-show {
+  @apply h-0;
+  @apply opacity-0;
+}
+
+/* Start purging... */
+@import "tailwindcss/components";
+/* Stop purging. */
+
+/* Write your own custom component styles here */
+
+.choice:before {
+  content: "> ";
+}
+
+/* Custom CSS to fix the SVG items */
+
+.site-logo g {
+  fill: url(#zfile-logo_svg__HoverGradient);
+  opacity: 0;
+  @apply transition-opacity;
+  @apply duration-200;
+  @apply ease-in;
+}
+
+.site-logo g:first-child {
+  @apply fill-current;
+  opacity: 1;
+}
+
+.site-logo svg:hover g {
+  opacity: 1;
+}
+
+.loading-spinner-container {
+  min-height: 150px;
+}
+
+.loading-spinner circle {
+  @apply opacity-25;
+}
+
+.loading-spinner path {
+  @apply opacity-75;
+}
+
+/* Start purging... */
+@import "tailwindcss/utilities";
+/* Stop purging. */
+
+/* Your own custom utilities */
+
+.title-red {
+  @apply text-red-600;
+}
+
+.default-transition {
+  @apply duration-200;
+  @apply ease-out;
+
+  @apply transition-opacity;
+  @apply transition-height;
+}
+
+@layer base {
+  body,
+  html {
+    @apply .min-h-full;
+  }
+
+  body {
+    @apply .bg-gradient-to-b;
+    @apply .bg-cover;
+
+    @apply .from-blue-100;
+    @apply .to-white;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      @apply .from-gray-900;
+      @apply .to-gray-800;
+
+      @apply .text-white;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply .font-title;
+    @apply pt-3;
+    @apply pb-1;
+  }
+
+  h1 {
+    @apply .text-3xl;
+  }
+
+  h2 {
+    @apply .text-2xl;
+  }
+
+  h3 {
+    @apply .text-lg;
+  }
+
+  p {
+    @apply pb-4;
+    line-height: 1.4;
+  }
+
+  p a,
+  .dashlink {
+    @apply border-b;
+    @apply border-current;
+    @apply border-dashed;
+    @apply opacity-75;
+
+    @apply transition-opacity;
+    @apply duration-150;
+    @apply ease-in-out;
+  }
+
+  p a:hover,
+  .dashlink:hover {
+    @apply border-solid;
+    @apply opacity-100;
+  }
+}
