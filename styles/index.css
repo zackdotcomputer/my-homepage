@@ -91,23 +91,23 @@
 @layer base {
   body,
   html {
-    @apply .min-h-full;
+    @apply min-h-full;
   }
 
   body {
-    @apply .bg-gradient-to-b;
-    @apply .bg-cover;
+    @apply bg-gradient-to-b;
+    @apply bg-cover;
 
-    @apply .from-blue-100;
-    @apply .to-white;
+    @apply from-blue-100;
+    @apply to-white;
   }
 
   @media (prefers-color-scheme: dark) {
     body {
-      @apply .from-gray-900;
-      @apply .to-gray-800;
+      @apply from-gray-900;
+      @apply to-gray-800;
 
-      @apply .text-white;
+      @apply text-white;
     }
   }
 
@@ -117,26 +117,26 @@
   h4,
   h5,
   h6 {
-    @apply .font-title;
+    @apply font-title;
     @apply pt-3;
     @apply pb-1;
   }
 
   h1 {
-    @apply .text-3xl;
+    @apply text-3xl;
   }
 
   h2 {
-    @apply .text-2xl;
+    @apply text-2xl;
   }
 
   h3 {
-    @apply .text-lg;
+    @apply text-lg;
   }
 
   p {
     @apply pb-4;
-    line-height: 1.4;
+    /* line-height: 1.4; */
   }
 
   p a,
