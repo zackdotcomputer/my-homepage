@@ -3,6 +3,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true
   },
+  darkMode: "media",
   purge: ["./src/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: {
@@ -100,11 +101,5 @@ module.exports = {
     borderColor: ["responsive", "hover", "focus", "dark"],
     borderStyle: ["responsive", "hover"]
   },
-  plugins: [
-    require("tailwindcss-prefers-dark-mode")({
-      type: "mediaQuery", // 'mediaQuery' or 'class'
-      className: ".dark-mode", // Activator css class if type === 'class'
-      prefix: "dark" // Class name prefix for naming dark variants
-    })
-  ]
+  plugins: []
 };
