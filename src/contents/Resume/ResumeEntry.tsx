@@ -1,9 +1,6 @@
 import React, { PropsWithChildren } from "react";
 
-const ResumeEntry = ({
-  title,
-  children
-}: PropsWithChildren<{ title: string }>) => {
+const ResumeEntry = ({ title, children }: PropsWithChildren<{ title: string }>) => {
   return (
     <div>
       <h3>{title}</h3>

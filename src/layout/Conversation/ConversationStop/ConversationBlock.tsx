@@ -12,12 +12,7 @@ const ConversationBlock = ({
   animated,
   className
 }: React.PropsWithChildren<BlockProps>) => {
-  const classNames = [
-    "conversation-block",
-    "overflow-hidden",
-    "default-transition",
-    "my-3"
-  ];
+  const classNames = ["conversation-block", "overflow-hidden", "default-transition", "my-3"];
 
   if (className) {
     classNames.push(className);
@@ -25,9 +20,7 @@ const ConversationBlock = ({
 
   const renderedElement = useRef<HTMLDivElement>(null);
 
-  const [hasRenderedVisible, setHasRenderedVisible] = useState(
-    isVisible && !animated
-  );
+  const [hasRenderedVisible, setHasRenderedVisible] = useState(isVisible && !animated);
 
   if (!isVisible) {
     if (!hasRenderedVisible || !animated) {
@@ -41,21 +34,14 @@ const ConversationBlock = ({
 
   const style: React.CSSProperties = useMemo(() => {
     if (hasRenderedVisible !== isVisible && animated) {
-      const scrollHeight = isVisible
-        ? renderedElement.current?.scrollHeight
-        : 1;
+      const scrollHeight = isVisible ? renderedElement.current?.scrollHeight : 1;
       return {
         height: `${scrollHeight ?? 0}px`
       };
     } else {
       return {};
     }
-  }, [
-    isVisible,
-    animated,
-    hasRenderedVisible,
-    renderedElement.current?.scrollHeight
-  ]);
+  }, [isVisible, animated, hasRenderedVisible, renderedElement.current?.scrollHeight]);
 
   useEffect(() => {
     const element = renderedElement.current;

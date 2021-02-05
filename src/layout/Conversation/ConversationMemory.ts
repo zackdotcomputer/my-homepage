@@ -9,16 +9,12 @@ export interface ConversationMemory {
   handleNavigation: (newPage: React.ReactChild) => any;
 }
 
-const useConversationMemory = (
-  firstStop?: ConversationStop
-): ConversationMemory => {
+const useConversationMemory = (firstStop?: ConversationStop): ConversationMemory => {
   const [pageStack, setPageStack] = useState<ConversationStop[]>(() =>
     firstStop ? [firstStop] : []
   );
 
-  const [madeChoiceIds, setMadeChoiceIds] = useState<Record<string, boolean>>(
-    {}
-  );
+  const [madeChoiceIds, setMadeChoiceIds] = useState<Record<string, boolean>>({});
 
   const handleNavigation = useCallback(
     (newPage: React.ReactChild) => {
@@ -33,10 +29,7 @@ const useConversationMemory = (
         setPageStack((stack) => [...stack, { choice, prompt: choice.prompt }]);
       }
       if (choice.response) {
-        setPageStack((stack) => [
-          ...stack,
-          { choice, response: choice.response }
-        ]);
+        setPageStack((stack) => [...stack, { choice, response: choice.response }]);
       }
 
       setMadeChoiceIds(

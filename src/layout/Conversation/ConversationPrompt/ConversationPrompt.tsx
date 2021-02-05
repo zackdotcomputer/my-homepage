@@ -10,12 +10,7 @@ interface Props {
   className?: string;
 }
 
-const ConversationPrompt = ({
-  className,
-  options,
-  onSelection,
-  showLoading
-}: Props) => {
+const ConversationPrompt = ({ className, options, onSelection, showLoading }: Props) => {
   const promptClass = `${className ?? ""} conversation-prompt`;
 
   return (

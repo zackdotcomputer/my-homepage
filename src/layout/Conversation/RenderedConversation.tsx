@@ -1,8 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import {
-  ConversationDestination,
-  ConversationPrompt
-} from "./ConversationPrompt";
+import { ConversationDestination, ConversationPrompt } from "./ConversationPrompt";
 import { ConversationBlock } from "./ConversationStop";
 
 interface FlowProps {
@@ -27,9 +24,7 @@ const RenderedConversation = ({
   const [lastRendered, setLastRendered] = useState(staticRenderUntilIndex);
   const [shouldShowLoading, setShouldShowLoading] = useState(true);
 
-  const [choicesToRender, setChoicesToRender] = useState<
-    ConversationDestination[]
-  >([]);
+  const [choicesToRender, setChoicesToRender] = useState<ConversationDestination[]>([]);
 
   useEffect(() => {
     if (lastRendered < blockCount - 1) {

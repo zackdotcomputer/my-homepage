@@ -1,6 +1,6 @@
 import React from "react";
-import ExperienceSection from "../../src/contents/Resume/Experience";
-import ZackHeadTags from "../../src/layout/ZackHeadTags";
+import ExperienceSection from "../../contents/Resume/Experience";
+import ZackHeadTags from "../../layout/ZackHeadTags";
 
 const Skills = () => {
   return (

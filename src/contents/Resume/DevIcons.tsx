@@ -16,7 +16,7 @@ import React from "react";
 
 const DevIcon = ({ icon }: { icon: IconDefinition }) => {
   return (
-    <div className="dev-icon text-5xl w-16 h-16 m-1">
+    <div className="dev-icon text-5xl w-12 h-12 m-3 flex justify-center items-center">
       <FontAwesomeIcon icon={icon} />
     </div>
   );

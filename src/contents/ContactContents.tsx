@@ -15,8 +15,10 @@ const ContactOption = ({
   children
 }: PropsWithChildren<{ icon: IconDefinition; href: string }>) => {
   return (
-    <li className="my-3 flex flex-row items-center">
-      <FontAwesomeIcon icon={icon} className="text-2xl mr-2" />
+    <li className="my-6 flex flex-row items-center">
+      <div className="w-8 h-8 mr-2">
+        <FontAwesomeIcon icon={icon} className="w-full h-full" />
+      </div>
       <Link href={href}>
         <a>{children}</a>
       </Link>
@@ -30,28 +32,16 @@ const ContactContents = () => {
       <h2>Go ahead, send a message</h2>
       <p>
         <ul>
-          <ContactOption
-            href="mailto:webcontact@zacksheppard.com"
-            icon={faEnvelope}
-          >
+          <ContactOption href="mailto:webcontact@zacksheppard.com" icon={faEnvelope}>
             Contact via email
           </ContactOption>
-          <ContactOption
-            href="https://www.github.com/zackdotcomputer"
-            icon={faGithub}
-          >
+          <ContactOption href="https://www.github.com/zackdotcomputer" icon={faGithub}>
             @zackdotcomputer on Github
           </ContactOption>
-          <ContactOption
-            href="https://www.twitter.com/zackdotcomputer"
-            icon={faTwitter}
-          >
+          <ContactOption href="https://www.twitter.com/zackdotcomputer" icon={faTwitter}>
             @zackdotcomputer on Twitter
           </ContactOption>
-          <ContactOption
-            href="https://www.linkedin.com/in/zacksheppard/"
-            icon={faLinkedin}
-          >
+          <ContactOption href="https://www.linkedin.com/in/zacksheppard/" icon={faLinkedin}>
             @zacksheppard on LinkedIn
           </ContactOption>
         </ul>

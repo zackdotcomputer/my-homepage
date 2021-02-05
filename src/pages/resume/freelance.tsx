@@ -1,6 +1,6 @@
 import React from "react";
-import FreelanceSection from "../../src/contents/Resume/Freelance";
-import ZackHeadTags from "../../src/layout/ZackHeadTags";
+import FreelanceSection from "../../contents/Resume/Freelance";
+import ZackHeadTags from "../../layout/ZackHeadTags";
 
 const FreelancePage = () => {
   return (

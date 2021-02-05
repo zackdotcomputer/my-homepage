@@ -45,9 +45,7 @@ const LoadingCard = ({
 
     if (!contentRef.current) {
       setCurrentState(
-        showLoading
-          ? LoadingCardState.showingLoading
-          : LoadingCardState.showingContent
+        showLoading ? LoadingCardState.showingLoading : LoadingCardState.showingContent
       );
       return undefined;
     }
@@ -86,10 +84,7 @@ const LoadingCard = ({
 
       return () => {
         clearTimeout(backup);
-        element.removeEventListener(
-          "transitionend",
-          transitionCompletionHandler
-        );
+        element.removeEventListener("transitionend", transitionCompletionHandler);
       };
     }
 

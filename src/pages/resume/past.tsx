@@ -1,6 +1,6 @@
 import React from "react";
-import PastSection from "../../src/contents/Resume/Past";
-import ZackHeadTags from "../../src/layout/ZackHeadTags";
+import PastSection from "../../contents/Resume/Past";
+import ZackHeadTags from "../../layout/ZackHeadTags";
 
 const Past = () => {
   return (

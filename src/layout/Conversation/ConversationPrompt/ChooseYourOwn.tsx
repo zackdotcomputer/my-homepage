@@ -56,13 +56,7 @@ const ChooseYourOwn = ({ options, onSelection }: Props) => {
   return (
     <ul className="choose-your-own font-mono">
       {options.map((opt) => {
-        return (
-          <Choice
-            key={opt.id}
-            option={opt}
-            onSelection={() => onSelection(opt)}
-          />
-        );
+        return <Choice key={opt.id} option={opt} onSelection={() => onSelection(opt)} />;
       })}
     </ul>
   );

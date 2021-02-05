@@ -1,10 +1,4 @@
-import React, {
-  ReactElement,
-  ReactNodeArray,
-  useCallback,
-  useEffect,
-  useState
-} from "react";
+import React, { ReactElement, ReactNodeArray, useCallback, useEffect, useState } from "react";
 import ResponsiveLogo from "../../contents/ResponsiveLogo";
 import WelcomeIntro from "../../contents/WelcomeIntro";
 import ZackHeadTags from "../ZackHeadTags";
@@ -19,13 +13,9 @@ interface Props {
 }
 
 const Conversation = ({ path, contents: baseContents }: Props) => {
-  const [lastLoggedPath, setLastLoggedPath] = useState<string | undefined>(
-    undefined
-  );
+  const [lastLoggedPath, setLastLoggedPath] = useState<string | undefined>(undefined);
 
-  const [headTags, setHeadTags] = useState<React.ReactElement>(
-    <ZackHeadTags />
-  );
+  const [headTags, setHeadTags] = useState<React.ReactElement>(<ZackHeadTags />);
 
   let foundHeadTags: React.ReactElement | undefined;
   let contents: React.ReactElement = baseContents;
@@ -49,9 +39,7 @@ const Conversation = ({ path, contents: baseContents }: Props) => {
     contents.type === React.Fragment &&
     !(contents.props as React.PropsWithChildren<unknown>).children;
 
-  const convo = useConversationMemory(
-    contentsAreEmptyFragment ? { page: contents } : undefined
-  );
+  const convo = useConversationMemory(contentsAreEmptyFragment ? { page: contents } : undefined);
   const blockCount = convo.stack.length + 2; // 2 for logo and welcome
 
   const nextQuestions = usePromptCalculator(convo.madeChoiceIds, convo.stack);
@@ -61,13 +49,7 @@ const Conversation = ({ path, contents: baseContents }: Props) => {
       setLastLoggedPath(path);
       convo.handleNavigation(contents);
     }
-  }, [
-    path,
-    lastLoggedPath,
-    contents,
-    contentsAreEmptyFragment,
-    convo.addToStack
-  ]);
+  }, [path, lastLoggedPath, contents, contentsAreEmptyFragment, convo.addToStack]);
 
   const getBlock = useCallback(
     (ind: number): React.ReactChild => {

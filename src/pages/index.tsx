@@ -1,7 +1,7 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
 import React, { useEffect, useState } from "react";
-import ZackHeadTags from "../src/layout/ZackHeadTags";
+import ZackHeadTags from "../layout/ZackHeadTags";
 
 const Index = () => {
   const copy = [
@@ -18,10 +18,7 @@ const Index = () => {
 
   return (
     <>
-      <ZackHeadTags
-        pageTitle="Conversational Homepage"
-        canonicalURL="https://zack.computer"
-      />
+      <ZackHeadTags pageTitle="Conversational Homepage" canonicalURL="https://zack.computer" />
       <h3>{copyToUse}</h3>
     </>
   );

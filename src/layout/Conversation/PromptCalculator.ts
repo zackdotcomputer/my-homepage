@@ -198,9 +198,7 @@ const usePromptCalculator = (
   } else if (lastChoiceWasResume) {
     centerPrompts = [...resumeSections, workCTA];
   } else {
-    const resumePrompt = lastChoice?.id.startsWith("resume-")
-      ? []
-      : [pickOneFrom(resumePrompts)];
+    const resumePrompt = lastChoice?.id.startsWith("resume-") ? [] : [pickOneFrom(resumePrompts)];
 
     centerPrompts = [workCTA, ...resumePrompt, pickOneFrom(contactPrompts)];
   }

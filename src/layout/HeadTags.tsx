@@ -72,10 +72,7 @@ export default function HeadTags({
     <Head>
       {/* HTML meta Tags */}
       <meta charSet="UTF-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <title>{computedPageTitle}</title>
       {disallowRobots && <meta name="robots" content="noindex" />}
       {faviconUrl && <link rel="icon" type="image/png" href={faviconUrl} />}
@@ -88,17 +85,11 @@ export default function HeadTags({
       {siteTitle && <meta property="og:site_name" content={siteTitle} />}
       {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
       {description && <meta property="og:description" content={description} />}
-      {imageUrlForFacebook && (
-        <meta property="og:image" content={imageUrlForFacebook} />
-      )}
+      {imageUrlForFacebook && <meta property="og:image" content={imageUrlForFacebook} />}
       {/* Twitter Card Tags */}
       <meta name="twitter:title" content={computedPageTitle} />
-      {imageUrlForTwitter && (
-        <meta name="twitter:card" content="summary_large_image" />
-      )}
-      {imageUrlForTwitter && (
-        <meta name="twitter:image:src" content={imageUrlForTwitter} />
-      )}
+      {imageUrlForTwitter && <meta name="twitter:card" content="summary_large_image" />}
+      {imageUrlForTwitter && <meta name="twitter:image:src" content={imageUrlForTwitter} />}
       {!imageUrlForTwitter && <meta name="twitter:card" content="summary" />}
       {twitterHandle && <meta name="twitter:site" content={twitterHandle} />}
       {twitterHandle && <meta name="twitter:creator" content={twitterHandle} />}

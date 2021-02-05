@@ -5,11 +5,7 @@ interface Props {
   timerange?: string;
 }
 
-const ResumeSection = ({
-  title,
-  timerange,
-  children
-}: PropsWithChildren<Props>) => {
+const ResumeSection = ({ title, timerange, children }: PropsWithChildren<Props>) => {
   return (
     <div>
       <div className="title-row flex flex-row justify-between">

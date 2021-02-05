@@ -4,7 +4,7 @@ module.exports = {
     purgeLayersByDefault: true
   },
   darkMode: "media",
-  purge: ["./src/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
+  purge: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: {
       transparent: "transparent",

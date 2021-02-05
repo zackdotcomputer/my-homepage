@@ -1,3 +1,2 @@
-.eslintrc.json
 .prettierrc.json
-*.config.js
+/*.js
