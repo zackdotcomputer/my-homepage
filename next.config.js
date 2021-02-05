@@ -1,9 +1,6 @@
 module.exports = {
   webpack: (config) => {
-    // Fixes npm packages that depend on `fs` module
-    config.node = {
-      fs: "empty"
-    };
+    config.target = "serverless";
 
     config.module.rules.push({
       test: /\.svg$/,
@@ -14,6 +11,7 @@ module.exports = {
       ]
     });
 
+    // Important: return the modified config
     return config;
   }
 };
