@@ -1,8 +1,9 @@
 module.exports = {
   target: "serverless",
+  webpack5: true,
 
-  future: {
-    webpack5: true
+  eslint: {
+    dirs: ["src"]
   },
 
   webpack(config) {

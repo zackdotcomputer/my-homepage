@@ -1,54 +1,7 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": [
-    "airbnb-typescript",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json",
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "plugins": ["react", "prettier"],
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
-    "@typescript-eslint/quotes": ["off"],
-    "@typescript-eslint/comma-dangle": ["off"],
-    "@typescript-eslint/indent": ["off"],
-    "no-use-before-define": "off",
-    "class-methods-use-this": "off",
-    "no-else-return": "off",
-    "no-underscore-dangle": ["error", { "allow": ["__ENV__"] }],
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-one-expression-per-line": "off",
-    "jsx-a11y/anchor-is-valid": [
-      "error",
-      {
-        "components": ["Link"],
-        "aspects": ["invalidHref", "preferButton"]
-      }
-    ],
-    "react/jsx-props-no-spreading": [
-      "error",
-      {
-        "html": "enforce",
-        "custom": "ignore",
-        "explicitSpread": "ignore"
-      }
-    ],
-    "react/require-default-props": [
-      2,
-      { "forbidDefaultForRequired": true, "ignoreFunctionalComponents": true }
-    ],
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
-    "react/jsx-wrap-multilines": ["off"]
+    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }]
   }
 }
