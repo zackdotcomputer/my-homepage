@@ -30,7 +30,6 @@ const LoadingCard = ({
 
   const baseRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const spinnerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (showLoading && currentState === LoadingCardState.showingContent) {
@@ -89,7 +88,7 @@ const LoadingCard = ({
     }
 
     return undefined;
-  }, [contentRef.current, showLoading, currentState]);
+  }, [contentRef, showLoading, currentState]);
 
   const height: string | undefined = useMemo(() => {
     if (
@@ -110,7 +109,7 @@ const LoadingCard = ({
     }
 
     return undefined;
-  }, [contentRef.current, spinnerRef.current, currentState]);
+  }, [contentRef, spinnerHeight, currentState]);
 
   const visibleStyle: CSSProperties = { opacity: 1 };
   const invisibleStyle: CSSProperties = { opacity: 0, pointerEvents: "none" };
@@ -146,7 +145,6 @@ const LoadingCard = ({
     <div ref={baseRef} className={classes.join(" ")} style={{ height }}>
       {renderLoading && (
         <div
-          ref={spinnerRef}
           className="loading-spinner-container absolute inset-0 flex items-center justify-center default-transition p-6"
           style={visibleLoading ? visibleStyle : invisibleStyle}
         >

@@ -16,6 +16,7 @@
   "author": "Zack Sheppard (zacksheppard.com)",
   "scripts": {
     "build": "next build",
+    "start": "next start",
     "dev": "next",
     "export": "next build && next export",
     "lint": "next lint"

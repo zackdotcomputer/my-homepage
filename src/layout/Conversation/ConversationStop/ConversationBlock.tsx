@@ -41,7 +41,7 @@ const ConversationBlock = ({
     } else {
       return {};
     }
-  }, [isVisible, animated, hasRenderedVisible, renderedElement.current?.scrollHeight]);
+  }, [isVisible, animated, hasRenderedVisible, renderedElement]);
 
   useEffect(() => {
     const element = renderedElement.current;
@@ -66,7 +66,7 @@ const ConversationBlock = ({
     }
 
     return undefined;
-  }, [hasRenderedVisible, isVisible, renderedElement.current, animated]);
+  }, [hasRenderedVisible, isVisible, renderedElement, animated]);
 
   return (
     <div ref={renderedElement} style={style} className={classNames.join(" ")}>

@@ -44,7 +44,7 @@ const RenderedConversation = ({
     }
 
     return undefined;
-  }, [blockCount, lastRendered]);
+  }, [blockCount, lastRendered, shouldShowLoading, staticRenderUntilIndex]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {

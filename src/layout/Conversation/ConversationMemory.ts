@@ -16,33 +16,25 @@ const useConversationMemory = (firstStop?: ConversationStop): ConversationMemory
 
   const [madeChoiceIds, setMadeChoiceIds] = useState<Record<string, boolean>>({});
 
-  const handleNavigation = useCallback(
-    (newPage: React.ReactChild) => {
-      setPageStack(pageStack.concat([{ page: newPage }]));
-    },
-    [pageStack]
-  );
+  const handleNavigation = useCallback((newPage: React.ReactChild) => {
+    setPageStack((stack) => stack.concat([{ page: newPage }]));
+  }, []);
 
-  const addToStack = useCallback(
-    (choice: ConversationDestination) => {
-      if (choice.prompt) {
-        setPageStack((stack) => [...stack, { choice, prompt: choice.prompt }]);
-      }
-      if (choice.response) {
-        setPageStack((stack) => [...stack, { choice, response: choice.response }]);
-      }
+  const addToStack = useCallback((choice: ConversationDestination) => {
+    if (choice.prompt) {
+      setPageStack((stack) => [...stack, { choice, prompt: choice.prompt }]);
+    }
+    if (choice.response) {
+      setPageStack((stack) => [...stack, { choice, response: choice.response }]);
+    }
 
-      setMadeChoiceIds(
-        (oldIds): Record<string, boolean> => {
-          return {
-            ...oldIds,
-            [choice.id]: true
-          };
-        }
-      );
-    },
-    [pageStack]
-  );
+    setMadeChoiceIds((oldIds): Record<string, boolean> => {
+      return {
+        ...oldIds,
+        [choice.id]: true
+      };
+    });
+  }, []);
 
   return {
     stack: pageStack,

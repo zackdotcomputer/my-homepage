@@ -49,7 +49,7 @@ const Conversation = ({ path, contents: baseContents }: Props) => {
       setLastLoggedPath(path);
       convo.handleNavigation(contents);
     }
-  }, [path, lastLoggedPath, contents, contentsAreEmptyFragment, convo.addToStack]);
+  }, [path, lastLoggedPath, contents, contentsAreEmptyFragment, convo]);
 
   const getBlock = useCallback(
     (ind: number): React.ReactChild => {
