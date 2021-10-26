@@ -1,5 +1,5 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "extends": ["next", "next/core-web-vitals", "plugin:prettier/recommended", "prettier"],
   "plugins": ["prettier"],
   "rules": {
     "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }]
