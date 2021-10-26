@@ -10,6 +10,16 @@ const FreelanceSection = () => {
         I’m available for hire as a freelance engineer, manager, consultant, and mentor. Some of my
         featured clients include:
       </p>
+      <ResumeEntry title="Addition Wealth">
+        <p>
+          I was brought on to the{" "}
+          <ExternalLink href="https://www.additionwealth.com">Addition Wealth</ExternalLink> team
+          before they had a prototype product built. I helped craft their product process, shape the
+          features they chose to develop, and lead a team of contractor engineers during the initial
+          product build. Since then, I&rsquo;ve stayed on the team to help them grow the product and
+          team into a stable company.
+        </p>
+      </ResumeEntry>
       <ResumeEntry title="OrbitCME">
         <p>
           I was brought on by OrbitCME as their sole iOS app engineer. Their founder wanted to
@@ -27,9 +37,9 @@ const FreelanceSection = () => {
           <ExternalLink href="https://apps.apple.com/us/app/cred-ai/id1393703565">
             Cred iOS App
           </ExternalLink>{" "}
-          team for over a year. As a senior engineer with experience building sensitive, secure, and
-          stable apps for millions of users, I&rsquo;ve been able to help them build a stronger app
-          with the kind of UI polish they aimed for.
+          team for over two years. As a senior engineer with experience building sensitive, secure,
+          and stable apps for millions of users, I&rsquo;ve been able to help them build a stronger
+          app with the kind of UI polish they aimed for.
         </p>
       </ResumeEntry>
       <ResumeEntry title="Candid™">
