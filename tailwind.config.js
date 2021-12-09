@@ -3,8 +3,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true
   },
-  darkMode: "media",
-  purge: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: {
       transparent: "transparent",
@@ -94,12 +93,6 @@ module.exports = {
         "convoCard-hide": "slideAndFadeOut 0.5s ease-out 1"
       }
     }
-  },
-  variants: {
-    display: ["responsive", "dark"],
-    backgroundColor: ["responsive", "hover", "focus", "dark"],
-    borderColor: ["responsive", "hover", "focus", "dark"],
-    borderStyle: ["responsive", "hover"]
   },
   plugins: []
 };

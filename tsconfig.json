@@ -2,7 +2,10 @@
   "version": "2.0.2",
   "compilerOptions": {
     "outDir": "./dist",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "module": "commonjs",
     "target": "es2019",
     "moduleResolution": "node",
@@ -21,8 +24,14 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "strict": false
+    "strict": false,
+    "incremental": true
   },
-  "include": ["./src/**/*", "next-env.d.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "./src/**/*",
+    "next-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
