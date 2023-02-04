@@ -10,10 +10,7 @@ const ExperienceSection = () => {
       <p>
         I’m a full-time freelance senior engineer, helping teams realize their potential and
         complete their projects. If you have need for someone with my experience,{" "}
-        <Link href="/contact">
-          <a>send me an email</a>
-        </Link>
-        .
+        <Link href="/contact">send me an email</Link>.
       </p>
       <p>
         Additionally, I’m working on building tools and code to improve the open-source community

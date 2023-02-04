@@ -5,19 +5,25 @@ import ResumeSection from "./ResumeSection";
 
 const FreelanceSection = () => {
   return (
-    <ResumeSection title="Freelance Work" timerange="2018 - Present">
+    <ResumeSection
+      title={
+        <>
+          <span className="title-red">Freelance</span> Work
+        </>
+      }
+      timerange="2018 - Present"
+    >
       <p>
-        I’m available for hire as a freelance engineer, manager, consultant, and mentor. Some of my
-        featured clients include:
+        I’m an experienced engineer, manager, consultant, and mentor. Some of my featured clients
+        include:
       </p>
-      <ResumeEntry title="Addition Wealth">
+      <ResumeEntry title="Fi">
         <p>
-          I was brought on to the{" "}
-          <ExternalLink href="https://www.additionwealth.com">Addition Wealth</ExternalLink> team
-          before they had a prototype product built. I helped craft their product process, shape the
-          features they chose to develop, and lead a team of contractor engineers during the initial
-          product build. Since then, I&rsquo;ve stayed on the team to help them grow the product and
-          team into a stable company.
+          I&rsquo;ve worked closely with the{" "}
+          <ExternalLink href="https://tryfi.com">Fi Dog Collars</ExternalLink> team for years,
+          helping build and launch multiple iterations of their marketing and store websites.
+          Through our repeated work together, we&rsquo;ve developed a rapport and pattern for
+          working quickly and iteratively to help shape designs into beautiful sites.
         </p>
       </ResumeEntry>
       <ResumeEntry title="OrbitCME">

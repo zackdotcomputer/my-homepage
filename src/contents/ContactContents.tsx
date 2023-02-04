@@ -19,9 +19,7 @@ const ContactOption = ({
       <div className="w-8 h-8 mr-2">
         <FontAwesomeIcon icon={icon} className="w-full h-full" />
       </div>
-      <Link href={href}>
-        <a>{children}</a>
-      </Link>
+      <Link href={href}>{children}</Link>
     </li>
   );
 };

@@ -14,11 +14,11 @@ const NavLink = ({
   ];
 
   return (
-    <Link href={href}>
-      <a className={classes.join(" ")}>
-        <li className="px-1">{children}</li>
-      </a>
-    </Link>
+    <li className="px-1">
+      <Link href={href} className={classes.join(" ")}>
+        {children}
+      </Link>
+    </li>
   );
 };
 
@@ -30,7 +30,7 @@ const Nav = () => {
   const homeSelected = router.pathname === "/normcore";
 
   return (
-    <nav>
+    <nav className="pt-2">
       <ul className="flex flex-row">
         <NavLink href="/normcore/" selected={homeSelected}>
           Home

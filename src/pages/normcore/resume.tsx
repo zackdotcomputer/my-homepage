@@ -1,5 +1,6 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
+import { Addition } from "../../contents/Resume/Addition";
 import ExperienceSection from "../../contents/Resume/Experience";
 import FreelanceSection from "../../contents/Resume/Freelance";
 import PastSection from "../../contents/Resume/Past";
@@ -12,6 +13,7 @@ const Resume = () => (
     <div>
       <ExperienceSection />
       <SectionBreak />
+      <Addition />
       <FreelanceSection />
       <SectionBreak />
       <PastSection />

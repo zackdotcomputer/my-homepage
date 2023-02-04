@@ -32,11 +32,14 @@ const Choice = ({
   if (option.href) {
     return (
       <RenderedChoice className={choiceClasses} id={option.id}>
-        <Link href={option.href} scroll={false}>
-          {/* eslint-disable-next-line */}
-          <a onClick={onSelection} role="link" className={buttonClasses}>
-            {option.prompt}
-          </a>
+        <Link
+          href={option.href}
+          scroll={false}
+          onClick={onSelection}
+          role="link"
+          className={buttonClasses}
+        >
+          {option.prompt}
         </Link>
       </RenderedChoice>
     );
