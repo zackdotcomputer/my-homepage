@@ -1,6 +1,5 @@
 // Created 11/2020 by Zack Sheppard (zacksheppard.com)
 
-import React from "react";
 import Response from "../layout/Conversation/Response";
 import ZackHeadTags from "../layout/ZackHeadTags";
 

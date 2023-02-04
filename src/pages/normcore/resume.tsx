@@ -1,6 +1,5 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
-import React from "react";
 import ExperienceSection from "../../contents/Resume/Experience";
 import FreelanceSection from "../../contents/Resume/Freelance";
 import PastSection from "../../contents/Resume/Past";

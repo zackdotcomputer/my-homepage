@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import ZackHeadTags from "../../layout/ZackHeadTags";
 
 const NormcoreHomepage = () => {

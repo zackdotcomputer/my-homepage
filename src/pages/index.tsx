@@ -1,6 +1,6 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ZackHeadTags from "../layout/ZackHeadTags";
 
 const copy = [

@@ -1,4 +1,3 @@
-import React from "react";
 import PastSection from "../../contents/Resume/Past";
 import ZackHeadTags from "../../layout/ZackHeadTags";
 

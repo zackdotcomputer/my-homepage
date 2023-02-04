@@ -1,7 +1,7 @@
 // Created 1/2019 by Zack Sheppard (zacksheppard.com)
 
 import Head from "next/head";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 
 export enum HeadTagsTitleConcatMode {
   // If there's a page title, use only it. Otherwise, use site title if defined.

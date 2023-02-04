@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 
 const ResumeEntry = ({ title, children }: PropsWithChildren<{ title: string }>) => {
   return (

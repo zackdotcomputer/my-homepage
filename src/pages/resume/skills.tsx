@@ -1,4 +1,3 @@
-import React from "react";
 import ExperienceSection from "../../contents/Resume/Experience";
 import ZackHeadTags from "../../layout/ZackHeadTags";
 

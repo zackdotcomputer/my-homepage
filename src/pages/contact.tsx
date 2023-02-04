@@ -1,4 +1,3 @@
-import React from "react";
 import ContactContents from "../contents/ContactContents";
 import ZackHeadTags from "../layout/ZackHeadTags";
 

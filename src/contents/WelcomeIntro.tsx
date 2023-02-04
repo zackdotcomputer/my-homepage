@@ -1,4 +1,3 @@
-import React from "react";
 import SectionBreak from "./SectionBreak";
 
 const WelcomeIntro = () => {

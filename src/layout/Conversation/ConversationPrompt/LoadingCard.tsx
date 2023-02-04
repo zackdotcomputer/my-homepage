@@ -1,11 +1,4 @@
-import React, {
-  CSSProperties,
-  PropsWithChildren,
-  useEffect,
-  useMemo,
-  useRef,
-  useState
-} from "react";
+import { CSSProperties, PropsWithChildren, useEffect, useMemo, useRef, useState } from "react";
 import LoadingSpinner from "../../../assets/loading-spinner.svg";
 
 enum LoadingCardState {

@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import RenderedChoice from "../RenderedChoice";
 
 const MadeChoice = ({ children }: PropsWithChildren<{}>) => {

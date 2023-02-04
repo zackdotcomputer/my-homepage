@@ -1,6 +1,6 @@
 import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import SectionBreak from "../../contents/SectionBreak";
 
 const NavLink = ({

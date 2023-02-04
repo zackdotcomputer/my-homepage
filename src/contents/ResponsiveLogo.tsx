@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from "../assets/zfile-logo.svg";
 
 const ResponsiveLogo = () => {

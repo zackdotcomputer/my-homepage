@@ -1,4 +1,3 @@
-import React from "react";
 import FreelanceSection from "../../contents/Resume/Freelance";
 import ZackHeadTags from "../../layout/ZackHeadTags";
 

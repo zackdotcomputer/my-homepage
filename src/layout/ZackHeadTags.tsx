@@ -1,4 +1,3 @@
-import React from "react";
 import HeadTags, { HeadTagsTitleConcatMode } from "./HeadTags";
 
 interface Props {

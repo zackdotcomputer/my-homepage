@@ -12,7 +12,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 
 const DevIcon = ({ icon }: { icon: IconDefinition }) => {
   return (

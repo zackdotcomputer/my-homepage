@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import ResponsiveLogo from "../../contents/ResponsiveLogo";
 import WelcomeIntro from "../../contents/WelcomeIntro";
 import Nav from "./Nav";
