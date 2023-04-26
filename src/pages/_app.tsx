@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         async
         defer
         data-website-id="7673694d-cf72-4c29-bea7-fcbbf9dd4e4a"
-        src="https://analytics.zack.computer/umami.js"
+        src="https://analytics.zack.computer/script.js"
       />
     </>
   );
