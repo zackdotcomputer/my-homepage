@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "zacks-homepage",
+  "main": "./workers/app.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "upload_source_maps": true
+  // Static assets (the client build plus prerendered HTML) are wired up
+  // automatically by @cloudflare/vite-plugin at build time.
+  //
+  // To serve from a custom domain, add e.g.:
+  // "routes": [{ "pattern": "zack.computer", "custom_domain": true }]
+}

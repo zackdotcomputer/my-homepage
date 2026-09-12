@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+/* --- Museo (self-hosted title face) ------------------------------------- */
+
+@font-face {
+  font-family: "Museo";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url("/webfonts/389018_0_0.woff2") format("woff2"),
+    url("/webfonts/389018_0_0.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Museo";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url("/webfonts/389018_1_0.woff2") format("woff2"),
+    url("/webfonts/389018_1_0.woff") format("woff");
+}
+
+/* --- Theme ---------------------------------------------------------------- */
+
+@theme {
+  --font-title: "Museo", ui-sans-serif, system-ui, sans-serif;
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* The site's long-standing palette, kept so the refresh stays mild. */
+  --color-gray-100: #f7fafc;
+  --color-gray-200: #edf2f7;
+  --color-gray-300: #e2e8f0;
+  --color-gray-400: #cbd5e0;
+  --color-gray-500: #a0aec0;
+  --color-gray-600: #718096;
+  --color-gray-700: #4a5568;
+  --color-gray-800: #2d3748;
+  --color-gray-900: #1a202c;
+
+  --color-red-500: #f56565;
+  --color-red-600: #e53e3e;
+  --color-red-700: #c53030;
+
+  --color-blue-100: #ebf8ff;
+  --color-blue-200: #bee3f8;
+  --color-blue-300: #90cdf4;
+  --color-blue-400: #63b3ed;
+  --color-blue-500: #4299e1;
+  --color-blue-600: #3182ce;
+  --color-blue-700: #2b6cb0;
+  --color-blue-800: #2c5282;
+  --color-blue-900: #2a4365;
+
+  --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* --- Base ----------------------------------------------------------------- */
+
+@layer base {
+  html {
+    color-scheme: light dark;
+    @apply min-h-full;
+  }
+
+  body {
+    @apply min-h-full bg-linear-to-b from-blue-100 to-white text-gray-900 antialiased;
+    @apply dark:from-gray-900 dark:to-gray-800 dark:text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply pt-3 pb-1 font-title;
+  }
+
+  h1 {
+    @apply text-3xl text-balance sm:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl text-balance;
+  }
+
+  h3 {
+    @apply text-lg;
+  }
+
+  p {
+    @apply pb-4 leading-relaxed;
+  }
+
+  p a {
+    @apply dashlink;
+  }
+
+  :focus-visible {
+    @apply rounded-xs outline-2 outline-offset-2 outline-blue-500 dark:outline-blue-300;
+  }
+}
+
+/* --- Utilities ------------------------------------------------------------ */
+
+@utility dashlink {
+  @apply border-b border-dashed border-current opacity-75;
+  @apply transition-opacity duration-150 ease-in-out hover:border-solid hover:opacity-100;
+}
+
+@utility title-red {
+  @apply text-red-600;
+}
+
+@utility choice {
+  &::before {
+    content: "> ";
+  }
+}
+
+/* --- Conversation flow ---------------------------------------------------- */
+
+@layer components {
+  /*
+   * Blocks in the conversation grow open and fade in when they're revealed.
+   * The 0fr -> 1fr grid trick lets the height animate from zero to "auto"
+   * without any JavaScript measuring.
+   */
+  .convo-block {
+    display: grid;
+    grid-template-rows: 1fr;
+    opacity: 1;
+    translate: 0 0;
+    transition:
+      grid-template-rows 500ms var(--ease-reveal),
+      opacity 500ms ease-out,
+      translate 500ms var(--ease-reveal);
+  }
+
+  .convo-block > * {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .convo-block[data-revealed="false"] {
+    grid-template-rows: 0fr;
+    opacity: 0;
+    translate: 0 1.5rem;
+  }
+
+  /* The prompt card cross-fades between a spinner and the list of choices. */
+  .prompt-card {
+    position: relative;
+    min-height: 9.375rem;
+  }
+
+  .prompt-card-spinner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease-out;
+  }
+
+  .prompt-card-content {
+    display: grid;
+    grid-template-rows: 1fr;
+    opacity: 1;
+    transition:
+      grid-template-rows 300ms var(--ease-reveal),
+      opacity 200ms ease-out;
+  }
+
+  .prompt-card-content > * {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .prompt-card[data-loading="true"] .prompt-card-spinner {
+    opacity: 1;
+  }
+
+  .prompt-card[data-loading="true"] .prompt-card-content {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+
+  /* The logo swaps to its gradient on hover. */
+  .site-logo .logo-hover {
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+  }
+
+  .site-logo:hover .logo-hover,
+  .site-logo:focus-visible .logo-hover {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .convo-block,
+    .prompt-card-spinner,
+    .prompt-card-content,
+    .site-logo .logo-hover {
+      transition: none;
+    }
+  }
+}
