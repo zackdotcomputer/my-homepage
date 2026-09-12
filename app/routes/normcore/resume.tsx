@@ -1,7 +1,7 @@
-import Addition from "~/contents/resume/Addition";
 import ExperienceSection from "~/contents/resume/Experience";
 import FreelanceSection from "~/contents/resume/Freelance";
 import PastSection from "~/contents/resume/Past";
+import RecentSection from "~/contents/resume/Recent";
 import SectionBreak from "~/contents/SectionBreak";
 import { pageMeta } from "~/lib/meta";
 import type { Route } from "./+types/resume";
@@ -14,7 +14,8 @@ export default function NormcoreResume() {
     <div>
       <ExperienceSection />
       <SectionBreak />
-      <Addition />
+      <RecentSection />
+      <SectionBreak />
       <FreelanceSection />
       <SectionBreak />
       <PastSection />

@@ -8,6 +8,7 @@ export default [
     index("routes/home.tsx"),
     route("contact", "routes/contact.tsx"),
     route("resume/skills", "routes/resume/skills.tsx"),
+    route("resume/recent", "routes/resume/recent.tsx"),
     route("resume/freelance", "routes/resume/freelance.tsx"),
     route("resume/past", "routes/resume/past.tsx"),
     route("*", "routes/not-found.tsx")

@@ -71,6 +71,7 @@ const contactOptions: ConversationDestination[] = [
 ];
 
 const resumeSections: ConversationDestination[] = [
+  { id: "experience-recent", prompt: "What have you been up to lately?", href: "/resume/recent" },
   { id: "experience-0", prompt: "Tell me more about your skills.", href: "/resume/skills" },
   {
     id: "experience-1",

@@ -4,6 +4,7 @@ import HomeGreeting from "~/contents/HomeGreeting";
 import ExperienceSection from "~/contents/resume/Experience";
 import FreelanceSection from "~/contents/resume/Freelance";
 import PastSection from "~/contents/resume/Past";
+import RecentSection from "~/contents/resume/Recent";
 import Response from "./Response";
 
 /**
@@ -15,6 +16,7 @@ const conversationPages: Record<string, ReactNode> = {
   "/": <HomeGreeting />,
   "/contact": <ContactContents />,
   "/resume/skills": <ExperienceSection />,
+  "/resume/recent": <RecentSection />,
   "/resume/freelance": <FreelanceSection />,
   "/resume/past": <PastSection />
 };
