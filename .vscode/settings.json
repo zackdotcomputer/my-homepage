@@ -1,6 +1,10 @@
 {
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.quickSuggestions": {
     "strings": true
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
   }
 }

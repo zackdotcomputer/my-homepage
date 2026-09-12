@@ -1,37 +1,11 @@
 {
-  "version": "2.0.2",
+  "files": [],
+  "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.cloudflare.json" }],
   "compilerOptions": {
-    "outDir": "./dist",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
-    "module": "commonjs",
-    "target": "es2019",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "jsx": "preserve",
-    "noImplicitAny": true,
-    "allowJs": true,
+    "checkJs": true,
+    "verbatimModuleSyntax": true,
     "skipLibCheck": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "noUnusedLocals": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "strict": false,
-    "incremental": true
-  },
-  "include": [
-    "./src/**/*",
-    "next-env.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "strict": true,
+    "noEmit": true
+  }
 }

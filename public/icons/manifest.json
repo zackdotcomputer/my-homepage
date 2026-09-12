@@ -3,7 +3,7 @@
   "name": "Zack Sheppard's Homepage",
   "icons": [
     {
-      "src": "/icons/favicon.ico",
+      "src": "/favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
@@ -18,7 +18,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#284b63",
   "background_color": "#ffffff"
