@@ -1,3 +1,4 @@
+import { SOCIAL } from "~/lib/site";
 import type { ConversationDestination, ConversationStop } from "./types";
 
 const resumePrompts: ConversationDestination[] = [
@@ -26,6 +27,13 @@ const workCTA: ConversationDestination = {
   response: "Ok - drop me a line!"
 };
 
+const aiQuestion: ConversationDestination = {
+  id: "ai-question",
+  prompt: "Is this an LLM or AI or something?",
+  response:
+    "Nope - this site was designed back in 2020 before chatbots were really a thing. These are all hand-coded options."
+};
+
 const cancelPrompts: ConversationDestination[] = [
   { id: "cancel-0", prompt: "Ok. Take me back to the start.", href: "/" },
   { id: "cancel-1", prompt: "Done here - take me back home.", href: "/" },
@@ -49,21 +57,19 @@ const contactOptions: ConversationDestination[] = [
   {
     id: "chat-mediums-1",
     prompt: "Take me to your Github",
-    href: "https://www.github.com/zackdotcomputer"
+    href: SOCIAL.github
   },
-  {
-    id: "chat-mediums-2",
-    prompt: "Let's connect on LinkedIn",
-    href: "https://www.linkedin.com/in/zacksheppard/"
-  },
+  { id: "chat-mediums-4", prompt: "Find me on Bluesky", href: SOCIAL.bluesky },
+  { id: "chat-mediums-2", prompt: "Let's connect on LinkedIn", href: SOCIAL.linkedin },
   {
     id: "chat-mediums-3",
     prompt: "I'll slide into your Twitter DMs",
-    href: "https://www.twitter.com/zackdotcomputer"
+    href: SOCIAL.twitter
   }
 ];
 
 const resumeSections: ConversationDestination[] = [
+  { id: "experience-recent", prompt: "What have you been up to lately?", href: "/resume/recent" },
   { id: "experience-0", prompt: "Tell me more about your skills.", href: "/resume/skills" },
   {
     id: "experience-1",
@@ -116,7 +122,7 @@ export function computePrompts(
     pathname.startsWith("/resume");
 
   const lastChoiceWasHomepage =
-    (lastChoice === undefined || lastChoice.href === "/") &&
+    (lastChoice === undefined || lastChoice.href === "/" || lastChoice.id === aiQuestion.id) &&
     !lastChoiceWasContact &&
     !lastChoiceWasResume;
 
@@ -131,7 +137,15 @@ export function computePrompts(
       ? []
       : [pickOneFrom(resumePrompts, pastChoices)];
 
-    centerPrompts = [workCTA, ...resumePrompt, pickOneFrom(contactPrompts, pastChoices)];
+    // Offer the "is this AI?" aside once per visit, until it's been asked.
+    const aiPrompt = pastChoices[aiQuestion.id] ? [] : [aiQuestion];
+
+    centerPrompts = [
+      workCTA,
+      ...resumePrompt,
+      pickOneFrom(contactPrompts, pastChoices),
+      ...aiPrompt
+    ];
   }
 
   const exitPrompt = lastChoiceWasHomepage

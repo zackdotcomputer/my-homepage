@@ -1,15 +1,24 @@
 import type { MetaDescriptor } from "react-router";
-
-export const SITE_TITLE = "Zack Sheppard";
-export const SITE_DESCRIPTION =
-  "Freelance iOS and Web full-stack developer. Come have a chat maybe we can work together.";
-export const SITE_ORIGIN = "https://zack.computer";
-export const TWITTER_HANDLE = "zackdotcomputer";
+import {
+  canonicalUrl,
+  SITE_DESCRIPTION,
+  SITE_ORIGIN,
+  SITE_TITLE,
+  SOCIAL,
+  TWITTER_HANDLE
+} from "./site";
 
 interface PageMetaOptions {
   pageTitle?: string;
-  /** Path (e.g. "/contact") or full URL for the canonical link. */
+  /**
+   * Path or URL for the canonical link. Defaults to `pathname`, so pages
+   * served from any host resolve to the same URL on the canonical origin.
+   */
   canonical?: string;
+  /** The current request path, from the route's meta args. */
+  pathname?: string;
+  /** OpenGraph object type. Defaults to "website". */
+  ogType?: "website" | "profile" | "article";
   disallowRobots?: boolean;
 }
 
@@ -17,34 +26,53 @@ interface PageMetaOptions {
  * Builds the full set of <head> descriptors for a page: title, description,
  * canonical link, OpenGraph and Twitter card tags.
  */
-export function pageMeta({ pageTitle, canonical, disallowRobots }: PageMetaOptions = {}) {
+export function pageMeta({
+  pageTitle,
+  canonical,
+  pathname,
+  ogType = "website",
+  disallowRobots
+}: PageMetaOptions = {}) {
   const title = pageTitle ? `${SITE_TITLE} - ${pageTitle}` : SITE_TITLE;
-  const canonicalUrl = canonical ? new URL(canonical, SITE_ORIGIN).toString() : undefined;
+  const url = canonicalUrl(canonical ?? pathname ?? "/");
 
   const descriptors: MetaDescriptor[] = [
     { title },
     { name: "description", content: SITE_DESCRIPTION },
-    { property: "og:type", content: "article" },
+    { name: "author", content: SITE_TITLE },
+    { tagName: "link", rel: "canonical", href: url },
+    { property: "og:type", content: ogType },
     { property: "og:title", content: pageTitle ?? SITE_TITLE },
     { property: "og:site_name", content: SITE_TITLE },
+    { property: "og:url", content: url },
     { property: "og:description", content: SITE_DESCRIPTION },
+    { property: "og:locale", content: "en_GB" },
     { name: "twitter:card", content: "summary" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: SITE_DESCRIPTION },
-    { name: "twitter:site", content: TWITTER_HANDLE },
-    { name: "twitter:creator", content: TWITTER_HANDLE }
+    { name: "twitter:site", content: `@${TWITTER_HANDLE}` },
+    { name: "twitter:creator", content: `@${TWITTER_HANDLE}` }
   ];
-
-  if (canonicalUrl) {
-    descriptors.push(
-      { tagName: "link", rel: "canonical", href: canonicalUrl },
-      { property: "og:url", content: canonicalUrl }
-    );
-  }
 
   if (disallowRobots) {
     descriptors.push({ name: "robots", content: "noindex" });
   }
 
   return descriptors;
+}
+
+/** schema.org Person structured data for the homepage. */
+export function personJsonLd(): MetaDescriptor {
+  return {
+    "script:ld+json": {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: SITE_TITLE,
+      url: SITE_ORIGIN,
+      jobTitle: "Product Engineer",
+      worksFor: { "@type": "Organization", name: "Marker", url: "https://marker.page" },
+      description: SITE_DESCRIPTION,
+      sameAs: [SOCIAL.github, SOCIAL.bluesky, SOCIAL.twitter, SOCIAL.linkedin]
+    }
+  };
 }
