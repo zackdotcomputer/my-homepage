@@ -39,7 +39,7 @@ export const links: Route.LinksFunction = () => [
   }
 ];
 
-export const meta: Route.MetaFunction = () => pageMeta();
+export const meta: Route.MetaFunction = ({ location }) => pageMeta({ pathname: location.pathname });
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

@@ -14,6 +14,8 @@ export default [
     route("*", "routes/not-found.tsx")
   ]),
 
+  route("sitemap.xml", "routes/sitemap[.]xml.ts"),
+
   // The "normcore" site: the same content as plain pages.
   route("normcore", "layouts/normcore.tsx", [
     index("routes/normcore/home.tsx"),

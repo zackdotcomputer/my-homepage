@@ -1,3 +1,4 @@
+import { SOCIAL } from "~/lib/site";
 import type { ConversationDestination, ConversationStop } from "./types";
 
 const resumePrompts: ConversationDestination[] = [
@@ -56,17 +57,14 @@ const contactOptions: ConversationDestination[] = [
   {
     id: "chat-mediums-1",
     prompt: "Take me to your Github",
-    href: "https://www.github.com/zackdotcomputer"
+    href: SOCIAL.github
   },
-  {
-    id: "chat-mediums-2",
-    prompt: "Let's connect on LinkedIn",
-    href: "https://www.linkedin.com/in/zacksheppard/"
-  },
+  { id: "chat-mediums-4", prompt: "Find me on Bluesky", href: SOCIAL.bluesky },
+  { id: "chat-mediums-2", prompt: "Let's connect on LinkedIn", href: SOCIAL.linkedin },
   {
     id: "chat-mediums-3",
     prompt: "I'll slide into your Twitter DMs",
-    href: "https://www.twitter.com/zackdotcomputer"
+    href: SOCIAL.twitter
   }
 ];
 

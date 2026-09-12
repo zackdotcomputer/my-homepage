@@ -6,7 +6,7 @@ import type { Route } from "./+types/not-found";
 // but the response itself is a proper 404.
 export const loader = () => data(null, { status: 404 });
 
-export const meta: Route.MetaFunction = () =>
-  pageMeta({ pageTitle: "Page not found", disallowRobots: true });
+export const meta: Route.MetaFunction = ({ location }) =>
+  pageMeta({ pageTitle: "Page not found", pathname: location.pathname, disallowRobots: true });
 
 export { default } from "~/conversation/ConversationRoute";

@@ -3,7 +3,7 @@ import { pageMeta } from "~/lib/meta";
 import type { Route } from "./+types/home";
 
 export const meta: Route.MetaFunction = () =>
-  pageMeta({ pageTitle: "Normcore Homepage", canonical: "/normcore/" });
+  pageMeta({ pageTitle: "Normcore Homepage", canonical: "/normcore" });
 
 export default function NormcoreHomepage() {
   return (

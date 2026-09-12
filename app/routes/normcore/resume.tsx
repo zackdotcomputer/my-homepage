@@ -7,7 +7,7 @@ import { pageMeta } from "~/lib/meta";
 import type { Route } from "./+types/resume";
 
 export const meta: Route.MetaFunction = () =>
-  pageMeta({ pageTitle: "My Work Experience", canonical: "/resume" });
+  pageMeta({ pageTitle: "My Work Experience", canonical: "/normcore/resume" });
 
 export default function NormcoreResume() {
   return (

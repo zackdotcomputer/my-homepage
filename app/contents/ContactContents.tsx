@@ -1,8 +1,9 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faGithub, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faBluesky, faGithub, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { PropsWithChildren } from "react";
+import { SOCIAL } from "~/lib/site";
 
 function ContactOption({
   icon,
@@ -26,16 +27,19 @@ export default function ContactContents() {
     <div>
       <h2>Go ahead, send a message</h2>
       <ul className="pb-4">
-        <ContactOption href="mailto:webcontact@zacksheppard.com" icon={faEnvelope}>
+        <ContactOption href={SOCIAL.email} icon={faEnvelope}>
           Contact via email
         </ContactOption>
-        <ContactOption href="https://www.github.com/zackdotcomputer" icon={faGithub}>
+        <ContactOption href={SOCIAL.github} icon={faGithub}>
           @zackdotcomputer on Github
         </ContactOption>
-        <ContactOption href="https://www.twitter.com/zackdotcomputer" icon={faTwitter}>
+        <ContactOption href={SOCIAL.bluesky} icon={faBluesky}>
+          @zack.computer on Bluesky
+        </ContactOption>
+        <ContactOption href={SOCIAL.twitter} icon={faTwitter}>
           @zackdotcomputer on Twitter
         </ContactOption>
-        <ContactOption href="https://www.linkedin.com/in/zacksheppard/" icon={faLinkedin}>
+        <ContactOption href={SOCIAL.linkedin} icon={faLinkedin}>
           @zacksheppard on LinkedIn
         </ContactOption>
       </ul>
